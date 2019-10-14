@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".RegistroDueno"
+    android:background="@drawable/header">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="50dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO DE CONDUCTOR  DE MICROBUSES"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#000000"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/driver"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorWhite">
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/formRegistroConductor"
+                android:shrinkColumns="@android:string/selectAll"
+                android:stretchColumns="@android:string/selectAll"
+                android:layout_gravity="center_horizontal"
+                >
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView android:text="Nombres: "
+                        android:textColor="#000000" android:layout_marginTop="20dp"/>
+                    <com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:hint="Jose Miguel"
+                            android:layout_width="200dp"
+                            android:layout_height="40dp"
+                            android:id="@+id/etNombresConductor"
+                            android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </TableRow>
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView android:text="Apellidos: "
+                        android:textColor="#000000"/>
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:hint="Perez Lopez"
+                        android:id="@+id/etApellidosConductor"
+                        android:theme="@style/Widget.AppCompat.EditText"
+                        />
+                </TableRow>
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView android:text="Correo electronico: "
+                        android:textColor="#000000"/>
+
+                    <EditText
+                        android:hint="jose.lopez@gmail.com"
+                        android:id="@+id/etCorreoConductor"
+                        android:theme="@style/Widget.AppCompat.EditText"
+                        android:inputType="textEmailAddress" />
+                </TableRow>
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView android:text="Contraseña: "
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:hint="contraseña123"
+                        android:id="@+id/etpasswordConductor"
+                        android:theme="@style/Widget.AppCompat.EditText"
+                        android:inputType="textPassword" />
+
+                </TableRow>
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView android:text="Repita su contraseña: "
+                        android:textColor="#000000" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:hint="contraseña123"
+                        android:id="@+id/etpassword2Conductor"
+
+                        android:inputType="textPassword" />
+
+                </TableRow>
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:text="Trabaja Para: "
+                        android:textColor="#000000" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:entries="@array/conductores"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:text="Seleccione una foto"
+                        android:textColor="#000000"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                       android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buscar foto..."
+                        />
+                </TableRow>
+                <TableRow android:gravity="center_horizontal"
+                    android:layout_marginBottom="15dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="registrarme"
+                        android:background="@color/cafe"
+                        android:textColor="@color/colorWhite"
+                        android:shadowColor="@color/gris"
+                        android:outlineAmbientShadowColor="@color/gris"
+
+                        android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
