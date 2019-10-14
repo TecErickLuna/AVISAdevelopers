@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tipo_cuenta"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Que tipo de usario es usted?"
+        style="@style/TextAppearance.AppCompat.Headline"/>
+
+    <LinearLayout
+        android:paddingTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/tipoPasajero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pasajero"
+            />
+
+        <Button
+            android:id="@+id/tipoConductor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="registroConductor"
+            android:text="Conductor"
+            />
+
+        <Button
+           android:id="@+id/tipoPropietario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Propietario"/>
+    </LinearLayout>
+
+</LinearLayout>

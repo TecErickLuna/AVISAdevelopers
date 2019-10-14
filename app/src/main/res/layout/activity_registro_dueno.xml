@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistroDueno"
+    android:padding="20dp"
+    android:background="@drawable/header">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="50dp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRO DE DUEÑO  DE MICROBUSES"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/man"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/formRegistroDueño"
+            android:shrinkColumns="@android:string/selectAll"
+            android:stretchColumns="@android:string/selectAll"
+            >
+            <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView android:text="Nombres: "
+                    android:textColor="#000000"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:hint="Jose Miguel"
+                    android:id="@+id/etNombresDueño"
+                    android:theme="@style/Widget.AppCompat.EditText"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView android:text="Apellidos: "
+                    android:textColor="#000000"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:hint="Perez Lopez"
+                    android:id="@+id/etApellidosDueño"
+                    android:theme="@style/Widget.AppCompat.EditText"
+                    />
+            </TableRow>
+            <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView android:text="Correo electronico: "
+                    android:textColor="#000000"/>
+
+                <EditText
+                    android:hint="jose.lopez@gmail.com"
+                    android:id="@+id/etCorreoDueño"
+                    android:theme="@style/Widget.AppCompat.EditText"
+                    android:inputType="textEmailAddress" />
+            </TableRow>
+            <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView android:text="Contraseña: "
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:hint="contraseña123"
+                    android:id="@+id/etpasswordDueño"
+                    android:theme="@style/Widget.AppCompat.EditText"
+                    android:inputType="textPassword" />
+
+            </TableRow>
+            <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView android:text="Repita su contraseña: "
+                    android:textColor="#000000" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:hint="contraseña123"
+                    android:id="@+id/etpassword2Dueño"
+
+                    android:inputType="textPassword" />
+
+            </TableRow>
+            <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:text="Seleccione una foto"
+                    android:textColor="#000000"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:text="Buscar foto..."
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                    />
+            </TableRow>
+            <TableRow android:gravity="center_horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:text="Crear Cuenta"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                    />
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
