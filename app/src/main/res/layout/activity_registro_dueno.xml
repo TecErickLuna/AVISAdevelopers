@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,90 +26,102 @@
             android:layout_gravity="center"
             android:textColor="#000000"
             />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@drawable/man"
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:background="@drawable/boton_redondo"
+            android:src="@drawable/man2"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:background="@color/colorWhite"
+        android:background="@drawable/bordes_redondeados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/formRegistroDueño"
             android:shrinkColumns="@android:string/selectAll"
             android:stretchColumns="@android:string/selectAll"
+            android:layout_gravity="center"
             >
             <TableRow>
-                <androidx.appcompat.widget.AppCompatTextView android:text="Nombres: "
-                    android:textColor="#000000"/>
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:hint="Jose Miguel"
-                    android:id="@+id/etNombresDueño"
-                    android:theme="@style/Widget.AppCompat.EditText"
-                    />
+                <com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:hint="Ingrese su nombre"
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/etNombresDueno"
+                        android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
             </TableRow>
 
             <TableRow>
-                <androidx.appcompat.widget.AppCompatTextView android:text="Apellidos: "
-                    android:textColor="#000000"/>
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:hint="Perez Lopez"
-                    android:id="@+id/etApellidosDueño"
-                    android:theme="@style/Widget.AppCompat.EditText"
-                    />
-            </TableRow>
-            <TableRow>
-                <androidx.appcompat.widget.AppCompatTextView android:text="Correo electronico: "
-                    android:textColor="#000000"/>
+                <com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:hint="jose.lopez@gmail.com"
-                    android:id="@+id/etCorreoDueño"
-                    android:theme="@style/Widget.AppCompat.EditText"
-                    android:inputType="textEmailAddress" />
-            </TableRow>
-            <TableRow>
-                <androidx.appcompat.widget.AppCompatTextView android:text="Contraseña: "
-                    android:textColor="#000000" />
-
-                <EditText
-                    android:hint="contraseña123"
-                    android:id="@+id/etpasswordDueño"
-                    android:theme="@style/Widget.AppCompat.EditText"
-                    android:inputType="textPassword" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Perez Lopez"
+                        android:id="@+id/etApellidosDueno"
+                        android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
             </TableRow>
             <TableRow>
-                <androidx.appcompat.widget.AppCompatTextView android:text="Repita su contraseña: "
-                    android:textColor="#000000" />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:hint="contraseña123"
-                    android:id="@+id/etpassword2Dueño"
-
-                    android:inputType="textPassword" />
+                <com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Ingrese su correo"
+                        android:id="@+id/etCorreoDueno"
+                        android:theme="@style/Widget.AppCompat.EditText"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
 
             </TableRow>
             <TableRow>
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:text="Seleccione una foto"
-                    android:textColor="#000000"
-                    />
-                <com.google.android.material.button.MaterialButton
-                    android:text="Buscar foto..."
-                    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                    />
+                <com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:hint="contraseña123"
+                        android:id="@+id/etpasswordDueno"
+                        android:theme="@style/Widget.AppCompat.EditText"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
             </TableRow>
+            <TableRow>
+                <com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:hint="contraseña123"
+                        android:id="@+id/etpassword2Dueno"
+
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </TableRow>
+            
             <TableRow android:gravity="center_horizontal">
                 <com.google.android.material.button.MaterialButton
                     android:text="Crear Cuenta"
+                    android:background="@color/naranja"
+                    android:gravity="center"
                     android:theme="@style/ThemeOverlay.AppCompat.Dark"
                     />
             </TableRow>
