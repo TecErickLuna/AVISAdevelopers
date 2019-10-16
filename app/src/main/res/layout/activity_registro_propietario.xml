@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    tools:context=".RegistroPropietario"
     android:padding="20dp"
-    tools:context=".RegistroConductor"
+    android:background="@drawable/header">
+
     android:background="@drawable/header">
 
     <ScrollView
@@ -28,7 +28,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="REGISTRO DE CONDUCTOR  DE MICROBUSES"
+                    android:text="REGISTRO DUEÑO  DE MICROBUSES"
                     android:layout_gravity="center_horizontal"
                     android:textColor="#000000"
                     />
@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
-                    android:src="@drawable/driver"
+                    android:src="@drawable/man2"
                     />
                 <!--
                 <androidx.appcompat.widget.AppCompatImageView
@@ -133,19 +133,7 @@
 
                     </TableRow>
 
-                    <TableRow>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:text="Trabaja Para: "
-                            android:textColor="#000000" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:layout_height="25dp"
-                            android:layout_marginLeft="-200dp"
-                            android:layout_width="180dp"
-                            android:entries="@array/conductores"
-                            />
-
-                    </TableRow>
 
                     <TableRow>
                         <androidx.appcompat.widget.AppCompatButton
@@ -162,23 +150,23 @@
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             />
                     </TableRow>
-                   <!-- <TableRow android:gravity="center_horizontal"
-                        android:layout_marginBottom="10dp">
+                    <!-- <TableRow android:gravity="center_horizontal"
+                         android:layout_marginBottom="10dp">
 
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"
-                            android:text="registrarme"
-                            android:background="@color/cafe"
-                            android:textColor="@color/colorWhite"
-                            android:shadowColor="@color/gris"
-                            android:outlineAmbientShadowColor="@color/gris"
+                         <androidx.appcompat.widget.AppCompatButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="40dp"
+                             android:text="registrarme"
+                             android:background="@color/cafe"
+                             android:textColor="@color/colorWhite"
+                             android:shadowColor="@color/gris"
+                             android:outlineAmbientShadowColor="@color/gris"
 
-                            android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                             android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
 
 
-                    </TableRow>-->
+                     </TableRow>-->
 
 
                 </TableLayout>
@@ -192,5 +180,4 @@
     </ScrollView>
 
 
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
