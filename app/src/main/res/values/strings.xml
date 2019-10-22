@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Avisa</string>
+    <string name="ingrese_nombre">Ingrese su nombre</string>
+    <string name="ingrese_apellido">Ingrese su apellido</string>
+    <string name="ingrese_correo">Ingrese su correo</string>
+    <string name="ingese_contra">Ingese su contraseña</string>
+    <string name="repita_contra">Repita su contraseña</string>
 </resources>
