@@ -54,7 +54,7 @@ public class Login_Form extends AppCompatActivity {
 
 
                         //CODIGO DE PRUEBA, NADA DEFINITIVO
-                        Intent mostrar = new Intent(getApplicationContext(), InicioConductor.class);
+                        Intent mostrar = new Intent(getApplicationContext(), MenuConductor.class);
                         startActivity(mostrar);
                         finish();
 

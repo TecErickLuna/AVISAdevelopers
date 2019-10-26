@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InicioConductor"></activity>
+        <activity
+            android:name=".MenuConductor"
+            android:label="@string/title_activity_menu_conductor"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".InicioConductor" />
         <activity android:name=".InicioPropietario" />
         <activity android:name=".InicioPasajero" />
         <activity android:name=".RegistroPropietario" />
@@ -27,6 +31,7 @@
         <activity android:name=".RegistroConductor" />
         <activity android:name=".MainActivity" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

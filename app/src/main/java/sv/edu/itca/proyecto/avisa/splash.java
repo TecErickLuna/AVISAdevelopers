@@ -31,7 +31,7 @@ public class splash extends AppCompatActivity {
 
     private void animacionProgreso() {
         progressbar anim = new progressbar(this, progressBar, conteoprogreso, 0f , 100f);
-        anim.setDuration(8000);
+        anim.setDuration(2000);
         progressBar.setAnimation(anim);
 
     }

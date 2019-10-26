@@ -7,32 +7,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".splash"
-    android:background="@drawable/header">
+    android:background="@drawable/avisaprincipal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="254dp"
-        android:layout_marginEnd="157dp"
-        android:gravity="center_horizontal"
-        android:text="AVISA"
-        android:textColor="@color/colorWhite"
-        android:textSize="35dp" />
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="125dp"
-        android:layout_height="103dp"
+
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_above="@+id/conteoProgreso"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="303dp"
-        android:layout_marginEnd="149dp"
-        android:layout_marginBottom="239dp"
         />
 
 
@@ -43,9 +28,11 @@
         android:text="0%"
         android:layout_centerHorizontal="true"
         android:textSize="25sp"
-        android:textColor="#fff"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:layout_centerVertical="true"
         android:layout_above="@id/progres_bar"
+
         />
     <ProgressBar
         android:id="@+id/progres_bar"
