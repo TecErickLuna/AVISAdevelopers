@@ -68,6 +68,7 @@
 
 
                 <EditText
+                    android:id="@+id/passwordLogin"
                     style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
                     android:layout_width="369dp"
                     android:layout_height="wrap_content"
