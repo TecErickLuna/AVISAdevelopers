@@ -16,6 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,14 +52,37 @@ public class Login_Form extends AppCompatActivity {
                         Toast.makeText(Login_Form.this, "La combinacion de usuario y contraseña no coinciden", Toast.LENGTH_LONG).show();
 
                     }
-                    else if (response.equals("Bien")){
+                    else {
                         Toast.makeText(Login_Form.this, "Datos cargados correctamente", Toast.LENGTH_LONG).show();
+
+                        try {
+
+                            JSONArray jsonArray = new JSONArray(response);
+                            String tipo_usuario=jsonArray.getJSONObject(0).getString("Tipo_Usuario");
+
+                            if (tipo_usuario.equals("conductor")){
+                                Intent mostrar = new Intent(getApplicationContext(), InicioConductor.class);
+                                startActivity(mostrar);
+                                finish();
+                            }
+                            else if (tipo_usuario.equals("pasajero")){
+                                Intent mostrar = new Intent(getApplicationContext(), InicioPasajero.class);
+                                startActivity(mostrar);
+                                finish();
+                            }
+                            else if (tipo_usuario.equals("propietario")){
+                                Intent mostrar = new Intent(getApplicationContext(), InicioPropietario.class);
+                                startActivity(mostrar);
+                                finish();
+                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
 
 
                         //CODIGO DE PRUEBA, NADA DEFINITIVO
-                        Intent mostrar = new Intent(getApplicationContext(), InicioConductor.class);
-                        startActivity(mostrar);
-                        finish();
+
 
                     }
 
