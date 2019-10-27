@@ -52,11 +52,34 @@ public class Login_Form extends AppCompatActivity {
                     else if (response.equals("Bien")){
                         Toast.makeText(Login_Form.this, "Datos cargados correctamente", Toast.LENGTH_LONG).show();
 
+                        try {
+
+                            JSONArray jsonArray = new JSONArray(response);
+                            String tipo_usuario=jsonArray.getJSONObject(0).getString("Tipo_Usuario");
+
+                            if (tipo_usuario.equals("conductor")){
+                                Intent mostrar = new Intent(getApplicationContext(), InicioConductor.class);
+                                startActivity(mostrar);
+                                finish();
+                            }
+                            else if (tipo_usuario.equals("pasajero")){
+                                Intent mostrar = new Intent(getApplicationContext(), InicioPasajero.class);
+                                startActivity(mostrar);
+                                finish();
+                            }
+                            else if (tipo_usuario.equals("propietario")){
+                                Intent mostrar = new Intent(getApplicationContext(), InicioPropietario.class);
+                                startActivity(mostrar);
+                                finish();
+                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
+
 
                         //CODIGO DE PRUEBA, NADA DEFINITIVO
-                        Intent mostrar = new Intent(getApplicationContext(), MenuConductor.class);
-                        startActivity(mostrar);
-                        finish();
+
 
                     }
 
