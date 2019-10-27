@@ -9,12 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OpcionesFotografiaConductor"></activity>
-        <activity android:name=".OpcionesFotografiaPropietario" />
-        <activity android:name=".OpcionesFotografiaPasajero" />
-        <activity android:name=".OpcionesFotografia" />
-        <activity android:name=".PerfilPasajero" />
-        <activity android:name=".InicioConductor" />
+        <activity android:name=".InicioConductor"></activity>
         <activity android:name=".InicioPropietario" />
         <activity android:name=".InicioPasajero" />
         <activity android:name=".RegistroPropietario" />
@@ -32,8 +27,5 @@
         <activity android:name=".RegistroConductor" />
         <activity android:name=".MainActivity" />
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
