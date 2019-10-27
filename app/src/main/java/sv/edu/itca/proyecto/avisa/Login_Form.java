@@ -23,6 +23,7 @@ public class Login_Form extends AppCompatActivity {
 
     }
 
+
     public void aceptar(View view) {
         EditText correoElectronico = (EditText) findViewById(R.id.correoElectronico);
         if (correoElectronico.getText().toString().equals("pasajero")){

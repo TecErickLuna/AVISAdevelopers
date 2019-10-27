@@ -16,29 +16,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:orientation="vertical">
 
-            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="REGISTRO DE PASAJERO"
+                android:textColor="#000000" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="25dp">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="REGISTRO DE PASAJERO"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="#000000"
-                    />
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="140dp"
+                    android:layout_height="145dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
-                    android:src="@drawable/man2"
-                    />
+                    android:src="@drawable/man2" />
+
+
 
             </LinearLayout>
 
@@ -62,14 +62,14 @@
                     >
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
+
                             <com.google.android.material.textfield.TextInputEditText
-                                android:hint="@string/ingrese_nombre"
-                                android:layout_width="300dp"
-                                android:layout_height="40dp"
-                                android:layout_gravity="center"
                                 android:id="@+id/etNombresConductor"
-                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-                                />
+                                android:layout_width="300dp"
+                                android:layout_height="51dp"
+                                android:layout_gravity="center"
+                                android:hint="@string/ingrese_nombre"
+                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </TableRow>
