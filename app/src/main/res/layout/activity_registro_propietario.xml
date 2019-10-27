@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroPropietario"
+    android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/header">
-
+    tools:context=".RegistroPropietario"
     android:background="@drawable/header">
 
     <ScrollView
@@ -28,7 +28,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="REGISTRO DUEÑO  DE MICROBUSES"
+                    android:text="REGISTRO DE PROPIETARIO DE MICROBUSES"
                     android:layout_gravity="center_horizontal"
                     android:textColor="#000000"
                     />
@@ -37,6 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
+                    android:layout_marginTop="10dp"
                     android:src="@drawable/man2"
                     />
                 <!--
@@ -60,11 +61,10 @@
                 <TableLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/formRegistroConductor"
+                    android:id="@+id/formRegistroPropietario"
                     android:shrinkColumns="@android:string/selectAll"
                     android:stretchColumns="@android:string/selectAll"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-14dp"
                     >
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +73,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:id="@+id/etNombresConductor"
+                                android:id="@+id/etNombresPropietario"
                                 android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +88,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:hint="@string/ingrese_apellido"
-                                android:id="@+id/etApellidosConductor"
+                                android:id="@+id/etApellidosPropietario"
                                 android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -100,7 +100,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingrese_correo"
-                                android:id="@+id/etCorreoConductor"
+                                android:id="@+id/etCorreoPropietario"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 android:inputType="textEmailAddress" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -112,7 +112,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingese_contra"
-                                android:id="@+id/etpasswordConductor"
+                                android:id="@+id/etpasswordPropietario"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -125,7 +125,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/repita_contra"
-                                android:id="@+id/etpassword2Conductor"
+                                android:id="@+id/etpassword2Propietario"
 
                                 android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -134,12 +134,11 @@
                     </TableRow>
 
 
-
                     <TableRow>
                         <androidx.appcompat.widget.AppCompatButton
                             android:layout_width="60dp"
                             android:layout_height="30dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
                             android:background="@color/naranja"
@@ -148,11 +147,12 @@
                             android:outlineAmbientShadowColor="@color/gris"
 
                             android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:onClick="RegistrarmePropietario"
                             />
                     </TableRow>
                     <!-- <TableRow android:gravity="center_horizontal"
                          android:layout_marginBottom="10dp">
-
+ 
                          <androidx.appcompat.widget.AppCompatButton
                              android:layout_width="wrap_content"
                              android:layout_height="40dp"
@@ -161,11 +161,11 @@
                              android:textColor="@color/colorWhite"
                              android:shadowColor="@color/gris"
                              android:outlineAmbientShadowColor="@color/gris"
-
+ 
                              android:foreground="?attr/selectableItemBackgroundBorderless"/>
-
-
-
+ 
+ 
+ 
                      </TableRow>-->
 
 
@@ -180,4 +180,5 @@
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

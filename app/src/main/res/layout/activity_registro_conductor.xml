@@ -19,33 +19,26 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="REGISTRO DE CONDUCTOR  DE MICROBUSES"
-                android:textColor="#000000" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="183dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="25dp">
 
-
-
-
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTRO DE CONDUCTOR  DE MICROBUSES"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#000000"
+                    />
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:layout_width="140dp"
-                    android:layout_height="145dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
-                    android:src="@drawable/driver" />
-
-
-
-
+                    android:src="@drawable/driver"
+                    />
                 <!--
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="150dp"
@@ -59,88 +52,80 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:background="@drawable/bordes_redondeados"
-                android:orientation="vertical">
+                >
 
 
                 <TableLayout
-                    android:id="@+id/formRegistroConductor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/formRegistroConductor"
                     android:shrinkColumns="@android:string/selectAll"
-                    android:stretchColumns="@android:string/selectAll">
-
+                    android:stretchColumns="@android:string/selectAll"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="-14dp"
+                    >
                     <TableRow>
-
                         <com.google.android.material.textfield.TextInputLayout>
-
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etNombresConductor"
+                                android:hint="@string/ingrese_nombre"
                                 android:layout_width="300dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:hint="@string/ingrese_nombre"
-                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense" />
+                                android:id="@+id/etNombresConductor"
+                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                                />
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </TableRow>
 
                     <TableRow>
-
                         <com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etApellidosConductor"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:hint="@string/ingrese_apellido"
-                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense" />
+                                android:id="@+id/etApellidosConductor"
+                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                                />
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </TableRow>
-
                     <TableRow>
-
                         <com.google.android.material.textfield.TextInputLayout>
-
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etCorreoConductor"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingrese_correo"
-                                android:inputType="textEmailAddress"
-                                android:theme="@style/Widget.AppCompat.EditText" />
+                                android:id="@+id/etCorreoConductor"
+                                android:theme="@style/Widget.AppCompat.EditText"
+                                android:inputType="textEmailAddress" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </TableRow>
-
                     <TableRow>
-
                         <com.google.android.material.textfield.TextInputLayout>
-
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etpasswordConductor"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingese_contra"
-                                android:inputType="textPassword"
-                                android:theme="@style/Widget.AppCompat.EditText" />
+                                android:id="@+id/etpasswordConductor"
+                                android:theme="@style/Widget.AppCompat.EditText"
+                                android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
 
 
                     </TableRow>
-
                     <TableRow>
-
                         <com.google.android.material.textfield.TextInputLayout>
-
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etpassword2Conductor"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/repita_contra"
+                                android:id="@+id/etpassword2Conductor"
 
                                 android:inputType="textPassword" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -149,35 +134,35 @@
                     </TableRow>
 
                     <TableRow>
-
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:layout_width="180dp"
-                            android:layout_height="25dp"
-                            android:layout_marginLeft="-200dp"
-                            android:entries="@array/conductores" />
-
                         <androidx.appcompat.widget.AppCompatTextView
                             android:text="Trabaja Para: "
                             android:textColor="#000000" />
 
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="-200dp"
+                            android:layout_width="180dp"
+                            android:entries="@array/conductores"
+                            />
+
                     </TableRow>
 
-                    <TableRow android:layout_width="match_parent">
-
+                    <TableRow>
                         <androidx.appcompat.widget.AppCompatButton
                             android:layout_width="60dp"
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
-                            android:background="@color/naranja"
-                            android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:outlineAmbientShadowColor="@color/gris"
-                            android:shadowColor="@color/gris"
                             android:text="REGISTRARME"
+                            android:background="@color/naranja"
+                            android:textColor="@color/colorWhite"
+                            android:shadowColor="@color/gris"
+                            android:outlineAmbientShadowColor="@color/gris"
 
-                            android:textColor="@color/colorWhite" />
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            />
                     </TableRow>
-                    <!-- <TableRow android:gravity="center_horizontal"
+                   <!-- <TableRow android:gravity="center_horizontal"
                         android:layout_marginBottom="10dp">
 
                         <androidx.appcompat.widget.AppCompatButton
