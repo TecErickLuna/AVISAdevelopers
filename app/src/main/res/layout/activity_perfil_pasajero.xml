@@ -33,13 +33,7 @@
                         android:layout_marginTop="10dp"
                         android:src="@drawable/man2"
                         />
-                    <!--
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:background="@drawable/driver"
-                        android:layout_gravity="center"
-                        />-->
+
                 </LinearLayout>
 
 
@@ -62,7 +56,6 @@
                         <TableRow>
                             <com.google.android.material.textfield.TextInputLayout>
                                 <com.google.android.material.textfield.TextInputEditText
-                                    android:hint="@string/ingrese_nombre"
                                     android:layout_width="300dp"
                                     android:layout_height="40dp"
                                     android:layout_gravity="center"
@@ -80,7 +73,6 @@
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:hint="@string/ingrese_apellido"
                                     android:id="@+id/etApellidosPropietario"
                                     android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                     />
@@ -92,7 +84,6 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/ingrese_correo"
                                     android:id="@+id/etCorreoPropietario"
                                     android:theme="@style/Widget.AppCompat.EditText"
                                     android:inputType="textEmailAddress" />
@@ -104,7 +95,6 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/ingese_contra"
                                     android:id="@+id/etpasswordPropietario"
                                     android:theme="@style/Widget.AppCompat.EditText"
                                     android:inputType="textPassword" />
@@ -117,9 +107,7 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/repita_contra"
                                     android:id="@+id/etpassword2Propietario"
-
                                     android:inputType="textPassword" />
                             </com.google.android.material.textfield.TextInputLayout>
 

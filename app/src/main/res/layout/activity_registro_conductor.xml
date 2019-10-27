@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".RegistroConductor"
-    android:background="@drawable/header">
+    tools:context=".RegistroConductor">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -38,6 +37,10 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
                     android:src="@drawable/driver"
+                    android:onClick="buscarFotoRegistroConductor"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+
                     />
                 <!--
                 <androidx.appcompat.widget.AppCompatImageView
@@ -154,10 +157,11 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
-                            android:background="@color/naranja"
+                            android:background="@color/colorRed"
                             android:textColor="@color/colorWhite"
                             android:shadowColor="@color/gris"
                             android:outlineAmbientShadowColor="@color/gris"
+                            android:id="@+id/imgconductor"
 
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             />

@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".RegistroPropietario"
-    android:background="@drawable/header">
+    android:background="@color/colorWhite">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,6 +39,8 @@
                     android:background="@drawable/boton_redondo"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/man2"
+                    android:onClick="buscarFotoRegistroPropietario"
+                    android:id="@+id/imgpropietario"
                     />
                 <!--
                 <androidx.appcompat.widget.AppCompatImageView
@@ -141,8 +143,7 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
-                            android:background="@color/naranja"
-                            android:textColor="@color/colorWhite"
+                            android:background="@color/colorRed"
                             android:shadowColor="@color/gris"
                             android:outlineAmbientShadowColor="@color/gris"
 

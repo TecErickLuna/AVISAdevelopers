@@ -109,14 +109,14 @@
                     android:paddingRight="10dp">
 
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/crearCuenta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Crear una Cuenta"
                     style="@style/Widget.AppCompat.Light.ActionButton.Overflow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="crearCuenta"
-                    />
+                    android:text="Crear una Cuenta" />
 
             </LinearLayout>
         </LinearLayout>

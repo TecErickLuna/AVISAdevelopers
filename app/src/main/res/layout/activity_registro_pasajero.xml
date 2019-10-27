@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".RegistroPasajero"
     android:padding="20dp"
-    android:background="@drawable/header">
+    android:background="@color/colorWhite">
 
 
 
@@ -38,6 +38,8 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
                     android:src="@drawable/man2"
+                    android:id="@+id/imgpasajero"
+                    android:onClick="buscarFotoRegistroPasajero"
                     />
 
             </LinearLayout>
@@ -134,7 +136,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
-                            android:background="@color/naranja"
+                            android:background="@color/colorRed"
                             android:textColor="@color/colorWhite"
                             android:shadowColor="@color/gris"
                             android:outlineAmbientShadowColor="@color/gris"
