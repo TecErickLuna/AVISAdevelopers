@@ -33,12 +33,14 @@
                     android:textColor="#000000"
                     />
                 <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/ibPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/boton_redondo"
                     android:src="@drawable/student"
+                    android:onClick="preview"
                     />
 
             </LinearLayout>
@@ -141,6 +143,7 @@
                             android:outlineAmbientShadowColor="@color/gris"
 
                             android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:onClick="registrarPasajero"
                             />
                     </TableRow>
 
