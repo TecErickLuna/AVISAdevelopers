@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class RegistroPasajero extends AppCompatActivity {
     private TextInputEditText Correo, contraseña, nombre, apellido;
-    private String tipo_usuario="propietario", foto;
+    private String tipo_usuario="pasajero";
     private String URL = "https://avproyect.000webhostapp.com/consultaLogin.php";
 
 
@@ -51,8 +51,7 @@ public class RegistroPasajero extends AppCompatActivity {
         contraseña = findViewById(R.id.etpasswordConductor);
         nombre = findViewById(R.id.etNombresConductor);
         apellido = findViewById(R.id.etApellidosConductor);
-        tipo_usuario = "Conductor";
-        foto = "ninguna";
+        tipo_usuario = "pasajero";
 
         foto2=findViewById(R.id.ibPerfil);
 
@@ -89,10 +88,10 @@ public class RegistroPasajero extends AppCompatActivity {
             public void onResponse(String response) {
 
                 if (response.equals("0")) {
-                    Toast.makeText(RegistroPasajero.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistroPasajero.this, "No se pudo registrar", Toast.LENGTH_LONG).show();
                 } else if (response.equals("1")) {
 
-                    Toast.makeText(RegistroPasajero.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistroPasajero.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_LONG).show();
 
                     /*try {
 
@@ -107,7 +106,7 @@ public class RegistroPasajero extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegistroPasajero.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroPasajero.this, "Acceso denegado\n"+error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -117,7 +116,7 @@ public class RegistroPasajero extends AppCompatActivity {
                 parametros.put("contraseña", contraseña.getText().toString());
                 parametros.put("nombre", nombre.getText().toString());
                 parametros.put("apellido", apellido.getText().toString());
-                parametros.put("jefe", "no_tiene");
+                parametros.put("jefe", "null");
                 parametros.put("tipo_usuario", tipo_usuario);
                 parametros.put("imagen",getStringImage(bitmap));
                 return parametros;
