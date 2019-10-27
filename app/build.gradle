@@ -74,3 +74,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:+'
     implementation 'androidx.lifecycle:lifecycle-extensions:+'
 }
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:+'
+    implementation 'androidx.constraintlayout:constraintlayout:+'
+}

@@ -38,7 +38,7 @@ public class RegistroConductor extends AppCompatActivity {
         contraseña = findViewById(R.id.etpasswordConductor);
         nombre = findViewById(R.id.etNombresConductor);
         apellido = findViewById(R.id.etApellidosConductor);
-        jefe = findViewById(R.id.spnJefeConductor);
+
         tipo_usuario = "Conductor";
         foto = "ninguna";
 
