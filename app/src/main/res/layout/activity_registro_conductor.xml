@@ -143,7 +143,6 @@
                             android:layout_marginLeft="-200dp"
                             android:layout_width="180dp"
                             android:entries="@array/conductores"
-                            android:id="@+id/spnJefeConductor"
                             />
 
                     </TableRow>
@@ -161,7 +160,6 @@
                             android:outlineAmbientShadowColor="@color/gris"
 
                             android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:onClick="RegistrarmeConductor"
                             />
                     </TableRow>
                    <!-- <TableRow android:gravity="center_horizontal"

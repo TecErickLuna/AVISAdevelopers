@@ -1,5 +1,6 @@
 package sv.edu.itca.proyecto.avisa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -54,7 +55,7 @@ public class RegistroConductor extends AppCompatActivity {
                 } else if (response.equals("1")) {
 
                     Toast.makeText(RegistroConductor.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_SHORT).show();
-
+                    finish();
                     /*try {
 
                         JSONArray jsonArray = new JSONArray(response);
