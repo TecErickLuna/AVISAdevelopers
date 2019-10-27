@@ -17,6 +17,6 @@ public class OpcionesFotografiaConductor extends AppCompatActivity {
     public void tomarfotodegaleriaconductor(View view) {
     }
 
-    public void eliminarfotopasajeroconductor(View view) {
+    public void eliminarfotoconductor(View view) {
     }
 }

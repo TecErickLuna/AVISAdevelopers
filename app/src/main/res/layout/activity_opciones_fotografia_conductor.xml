@@ -17,8 +17,8 @@
             android:gravity="center"
             android:padding="10dp"
             android:id="@+id/opcTomarFoto"
-            android:onClick="tomarfotodecamarapasajero"
-            android:clickable="true">
+            android:onClick="tomarfotodecamaraconductor"
+            >
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -46,8 +46,8 @@
             android:orientation="vertical"
             android:gravity="center"
             android:padding="10dp"
+            android:onClick="tomarfotodegaleriaconductor"
             android:id="@+id/opcGaleria"
-            android:onClick="tomarfotodegaleriapasajero"
             android:clickable="true">
             <ImageView
                 android:layout_width="64dp"
@@ -77,7 +77,6 @@
             android:gravity="center"
             android:padding="10dp"
             android:id="@+id/opcEliminar"
-            android:onClick="eliminarfotopasajero"
             android:clickable="true">
             <ImageView
                 android:layout_width="64dp"
@@ -91,6 +90,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
                 android:text="Eliminar"
+                android:onClick="eliminarfotoconductor"
                 android:textColor="#000"/>
             <View
                 android:layout_width="match_parent"

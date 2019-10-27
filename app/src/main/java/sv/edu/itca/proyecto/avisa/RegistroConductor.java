@@ -98,7 +98,7 @@ public class RegistroConductor extends AppCompatActivity {
     public void buscarFotoRegistroConductor(View view) {
         AlertDialog.Builder builder4 = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        builder4.setView(inflater.inflate(R.layout.activity_opciones_fotografia, null)).setPositiveButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder4.setView(inflater.inflate(R.layout.activity_opciones_fotografia_conductor, null)).setPositiveButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();
