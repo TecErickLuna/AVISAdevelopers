@@ -138,16 +138,17 @@
                     </TableRow>
 
                     <TableRow>
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:text="Trabaja Para: "
-                            android:textColor="#000000" />
+                        <com.google.android.material.textfield.TextInputLayout>
 
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:layout_height="25dp"
-                            android:layout_marginLeft="-200dp"
-                            android:layout_width="180dp"
-                            android:entries="@array/conductores"
-                            />
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:hint="Escriba el correo de su jefe"
+                                android:id="@+id/etJefe"
+                                android:theme="@style/Widget.AppCompat.EditText"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </TableRow>
 

@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -39,7 +40,7 @@ public class RegistroConductor extends AppCompatActivity {
     private TextInputEditText Correo, contraseña, nombre, apellido;
     private String tipo_usuario="conductor";
     private String URL = "https://avproyect.000webhostapp.com/registroUsuarios.php";
-    private AppCompatSpinner jefe;
+    private EditText jefe;
 
     private ImageButton foto;
     private Bitmap bitmap;
@@ -53,9 +54,9 @@ public class RegistroConductor extends AppCompatActivity {
         contraseña = findViewById(R.id.etpasswordConductor);
         nombre = findViewById(R.id.etNombresConductor);
         apellido = findViewById(R.id.etApellidosConductor);
-
-        tipo_usuario = "Conductor";
-        foto = findViewById(R.id.ibfoto);
+        jefe=findViewById(R.id.etJefe);
+        tipo_usuario = "conductor";
+        foto = findViewById(R.id.imgconductor);
 
     }
 
@@ -97,7 +98,7 @@ public class RegistroConductor extends AppCompatActivity {
                 parametros.put("contraseña", contraseña.getText().toString().trim());
                 parametros.put("nombre", nombre.getText().toString().trim());
                 parametros.put("apellido", apellido.getText().toString().trim());
-                parametros.put("jefe", "N/A");
+                parametros.put("jefe", jefe.getText().toString().trim());
                 parametros.put("tipo_usuario", tipo_usuario);
                 parametros.put("imagen", getStringImage(bitmap) );
                 return parametros;

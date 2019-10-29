@@ -38,7 +38,7 @@
                     android:background="@drawable/boton_redondo"
                     android:src="@drawable/man2"
                     android:id="@+id/picRegistroPasajero"
-                    android:onClick="buscarFotoRegistroPasajero"/>
+                    android:onClick="preview"/>
 
 
 

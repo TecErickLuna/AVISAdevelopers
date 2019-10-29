@@ -39,7 +39,7 @@
                     android:background="@drawable/boton_redondo"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/man2"
-                    android:onClick="buscarFotoRegistroPropietario"
+                    android:onClick="previewPropietario"
                     android:id="@+id/imgpropietario"
                     />
                 <!--

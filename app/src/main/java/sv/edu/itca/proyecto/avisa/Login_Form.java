@@ -46,4 +46,9 @@ public class Login_Form extends AppCompatActivity {
             toast1.show();
         }
     }
+
+    public void Logeo(View view) {
+
+
+    }
 }
