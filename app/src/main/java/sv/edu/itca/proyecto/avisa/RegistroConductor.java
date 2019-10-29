@@ -2,11 +2,17 @@ package sv.edu.itca.proyecto.avisa;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
@@ -23,15 +29,21 @@ import com.google.android.material.textfield.TextInputEditText;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class RegistroConductor extends AppCompatActivity {
     private TextInputEditText Correo, contraseña, nombre, apellido;
-    private String tipo_usuario="conductor", foto;
-    private String URL = "https://avproyect.000webhostapp.com/consultaLogin.php";
+    private String tipo_usuario="conductor";
+    private String URL = "https://avproyect.000webhostapp.com/registroUsuarios.php";
     private AppCompatSpinner jefe;
 
+    private ImageButton foto;
+    private Bitmap bitmap;
+    private static int SELECT_PICTURE=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +55,7 @@ public class RegistroConductor extends AppCompatActivity {
         apellido = findViewById(R.id.etApellidosConductor);
 
         tipo_usuario = "Conductor";
-        foto = "ninguna";
+        foto = findViewById(R.id.ibfoto);
 
     }
 
@@ -53,9 +65,9 @@ public class RegistroConductor extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                if (response.equals("0")) {
+                if (response.equals("Error")) {
                     Toast.makeText(RegistroConductor.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
-                } else if (response.equals("1")) {
+                } else if (response.equals("Subio imagen Correctamente")) {
 
                     Toast.makeText(RegistroConductor.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_SHORT).show();
                     finish();
@@ -67,24 +79,27 @@ public class RegistroConductor extends AppCompatActivity {
                         e.printStackTrace();
                     }*/
                 }
+                else {
+                    Toast.makeText(RegistroConductor.this,"Error php: \n"+response,Toast.LENGTH_LONG).show();
+                }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegistroConductor.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroConductor.this, "Acceso denegado :( \n"+error, Toast.LENGTH_LONG).show();
             }
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<>();
-                parametros.put("correo", Correo.getText().toString());
-                parametros.put("contraseña", contraseña.getText().toString());
-                parametros.put("nombre", nombre.getText().toString());
-                parametros.put("apellido", apellido.getText().toString());
-                parametros.put("jefe", "trabajo_solo");
+                Map<String, String> parametros = new Hashtable<String, String>();
+                parametros.put("correo", Correo.getText().toString().trim());
+                parametros.put("contraseña", contraseña.getText().toString().trim());
+                parametros.put("nombre", nombre.getText().toString().trim());
+                parametros.put("apellido", apellido.getText().toString().trim());
+                parametros.put("jefe", "N/A");
                 parametros.put("tipo_usuario", tipo_usuario);
-                parametros.put("foto", foto);
+                parametros.put("imagen", getStringImage(bitmap) );
                 return parametros;
             }
 
@@ -92,6 +107,15 @@ public class RegistroConductor extends AppCompatActivity {
 
         RequestQueue rQ = Volley.newRequestQueue(RegistroConductor.this);
         rQ.add(request);
+    }
+
+    private String getStringImage(Bitmap bitmap) {
+        ByteArrayOutputStream bObj = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,bObj);
+        byte[] imageBytes=bObj.toByteArray();
+        String imagenCodificada = Base64.encodeToString(imageBytes,Base64.DEFAULT);
+
+        return imagenCodificada;
     }
 
 
@@ -106,5 +130,32 @@ public class RegistroConductor extends AppCompatActivity {
         });
         builder4.create();
         builder4.show();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==SELECT_PICTURE && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+            Uri rutaArchivo = data.getData();
+            try {
+
+                bitmap= MediaStore.Images.Media.getBitmap(getContentResolver(),rutaArchivo);
+                foto.setImageBitmap(bitmap);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void preview(View view) {
+
+        Intent intent = new Intent();
+        intent.setType("image/*");//intent.setType("image/PNG");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+
+
+
     }
 }

@@ -37,9 +37,10 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
                     android:src="@drawable/driver"
-                    android:onClick="buscarFotoRegistroConductor"
+                    android:onClick="preview"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
+                    android:id="@+id/ibfoto"
 
                     />
                 <!--
@@ -162,7 +163,7 @@
                             android:shadowColor="@color/gris"
                             android:outlineAmbientShadowColor="@color/gris"
                             android:id="@+id/imgconductor"
-
+                            android:onClick="RegistrarmeConductor"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             />
                     </TableRow>
