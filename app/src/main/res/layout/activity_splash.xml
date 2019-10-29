@@ -7,19 +7,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".splash"
-    android:background="@drawable/avisaprincipal">
+    android:background="@color/colorWhite">
 
 
     <ImageView
         android:id="@+id/logo"
-
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_above="@+id/conteoProgreso"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        />
-
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="-8dp"
+        android:src="@drawable/avisalogo" />
 
     <TextView
         android:id="@+id/conteoProgreso"
