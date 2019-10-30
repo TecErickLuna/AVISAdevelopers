@@ -150,6 +150,7 @@
                             android:outlineAmbientShadowColor="@color/gris"
                             android:shadowColor="@color/gris"
                             android:text="REGISTRARME"
+                            android:onClick="preview"
 
                             android:textColor="@color/colorWhite" />
                     </TableRow>

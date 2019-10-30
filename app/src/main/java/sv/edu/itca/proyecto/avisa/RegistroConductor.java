@@ -56,7 +56,7 @@ public class RegistroConductor extends AppCompatActivity {
         apellido = findViewById(R.id.etApellidosConductor);
         jefe=findViewById(R.id.etJefe);
         tipo_usuario = "conductor";
-        foto = findViewById(R.id.imgconductor);
+        foto = findViewById(R.id.ibfoto);
 
     }
 
@@ -72,13 +72,7 @@ public class RegistroConductor extends AppCompatActivity {
 
                     Toast.makeText(RegistroConductor.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_SHORT).show();
                     finish();
-                    /*try {
 
-                        JSONArray jsonArray = new JSONArray(response);
-
-                    }catch (JSONException e){
-                        e.printStackTrace();
-                    }*/
                 }
                 else {
                     Toast.makeText(RegistroConductor.this,"Error php: \n"+response,Toast.LENGTH_LONG).show();
