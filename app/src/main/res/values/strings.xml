@@ -5,4 +5,6 @@
     <string name="ingrese_correo">Ingrese su correo</string>
     <string name="ingese_contra">Ingrese su contraseña</string>
     <string name="repita_contra">Repita su contraseña</string>
+    <string name="title_activity_mapa_ruta_ahuacha">Map</string>
+    <string name="title_activity_mapa_ruta_metapan">Map</string>
 </resources>
