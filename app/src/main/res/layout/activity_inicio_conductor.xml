@@ -237,7 +237,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="...s"
+                    android:text="Ajustes de aplicacion"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>
