@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapaRutaAhuacha" />
+    <SearchView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv_location"
+        android:queryHint="Buscar..."
+        android:iconifiedByDefault="false"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/bg_round"
+        />
+
+
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/floatingGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_plusIconColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="-8dp"
+        app:fab_addButtonColorNormal="#000000"
+        app:fab_addButtonColorPressed="#D82822"
+        app:fab_colorNormal="#A4A85050"
+        app:fab_colorPressed="#A450A5A8"
+        app:fab_labelsPosition="right"
+
+        >
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAmbos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#97FFFFFF"
+            app:fab_icon="@drawable/iconomapaambas"
+            app:fab_size="mini"
+            app:fab_title="Ambos"
+
+            />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabIda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/iconomapafroja"
+            app:fab_size="mini"
+            app:fab_colorNormal="#97FFFFFF"
+            app:fab_title="Ruta Ida"
+            />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabVuelta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#97FFFFFF"
+            app:fab_icon="@drawable/iconomapafnegra"
+            app:fab_size="mini"
+            app:fab_title="Ruta Vuelta"
+            />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSatelital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#97FFFFFF"
+            app:fab_icon="@drawable/satelital"
+            app:fab_size="mini"
+            app:fab_title="Mapa Satelital"
+            />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#97FFFFFF"
+            app:fab_icon="@drawable/normal"
+            app:fab_size="mini"
+            app:fab_title="Mapa Normal"
+            />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#97FFFFFF"
+            app:fab_icon="@drawable/iconomaparegresar"
+            app:fab_size="mini"
+            app:fab_title="Regresar"
+            />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+
+</RelativeLayout>
