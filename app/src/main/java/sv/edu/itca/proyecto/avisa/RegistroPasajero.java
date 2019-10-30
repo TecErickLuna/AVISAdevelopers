@@ -47,10 +47,10 @@ public class RegistroPasajero extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_pasajero);
 
-        Correo = findViewById(R.id.etCorreoConductor);
-        contraseña = findViewById(R.id.etpasswordConductor);
-        nombre = findViewById(R.id.etNombresConductor);
-        apellido = findViewById(R.id.etApellidosConductor);
+        Correo = findViewById(R.id.etCorreoPasajero);
+        contraseña = findViewById(R.id.etpasswordPasajero);
+        nombre = findViewById(R.id.etNombresPasajero);
+        apellido = findViewById(R.id.etApellidosPasajero);
 
         tipo_usuario = "pasajero";
         foto = findViewById(R.id.picRegistroPasajero);

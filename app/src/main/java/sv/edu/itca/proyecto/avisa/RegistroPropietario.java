@@ -48,10 +48,10 @@ public class RegistroPropietario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_propietario);
 
-        Correo = findViewById(R.id.etCorreoConductor);
-        contraseña = findViewById(R.id.etpasswordConductor);
-        nombre = findViewById(R.id.etNombresConductor);
-        apellido = findViewById(R.id.etApellidosConductor);
+        Correo = findViewById(R.id.etCorreoPropietario);
+        contraseña = findViewById(R.id.etpasswordPropietario);
+        nombre = findViewById(R.id.etNombresPropietario);
+        apellido = findViewById(R.id.etNombresPropietario);
 
         tipo_usuario = "propietario";
         foto = findViewById(R.id.imgpropietario);

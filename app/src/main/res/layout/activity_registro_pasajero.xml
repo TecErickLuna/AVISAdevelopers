@@ -53,7 +53,7 @@
 
 
                 <TableLayout
-                    android:id="@+id/formRegistroConductor"
+                    android:id="@+id/formRegistroPasajero"
                     android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -66,7 +66,7 @@
                         <com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etNombresConductor"
+                                android:id="@+id/etNombresPasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
@@ -81,7 +81,7 @@
                         <com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etApellidosConductor"
+                                android:id="@+id/etApellidosPasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -96,7 +96,7 @@
                         <com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etCorreoConductor"
+                                android:id="@+id/etCorreoPasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingrese_correo"
@@ -111,7 +111,7 @@
                         <com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etpasswordConductor"
+                                android:id="@+id/etpasswordPasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingese_contra"
@@ -127,7 +127,7 @@
                         <com.google.android.material.textfield.TextInputLayout>
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/etpassword2Conductor"
+                                android:id="@+id/etpassword2Pasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/repita_contra"
