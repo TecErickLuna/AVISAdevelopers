@@ -68,7 +68,7 @@
                     android:shrinkColumns="@android:string/selectAll"
                     android:stretchColumns="@android:string/selectAll"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-14dp"
+                    android:layout_marginTop="-4dp"
                     >
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
@@ -79,6 +79,7 @@
                                 android:layout_gravity="center"
                                 android:id="@+id/etNombresConductor"
                                 android:theme="@style/Widget.AppCompat.EditText"
+                                android:layout_marginTop="10dp"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
 
