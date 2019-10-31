@@ -48,7 +48,7 @@
                     <TableLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/formRegistroPropietario"
+                        android:id="@+id/formRegistroPasajero"
                         android:shrinkColumns="@android:string/selectAll"
                         android:stretchColumns="@android:string/selectAll"
                         android:layout_gravity="center_horizontal"
@@ -59,7 +59,8 @@
                                     android:layout_width="300dp"
                                     android:layout_height="40dp"
                                     android:layout_gravity="center"
-                                    android:id="@+id/etNombresPropietario"
+                                    android:id="@+id/etCambioNombresPasajero"
+                                    android:enabled="false"
                                     android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                     />
                             </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +74,8 @@
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:id="@+id/etApellidosPropietario"
+                                    android:id="@+id/etCambioApellidosPasajero"
+                                    android:enabled="false"
                                     android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                     />
                             </com.google.android.material.textfield.TextInputLayout>
@@ -84,8 +86,9 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/etCorreoPropietario"
+                                    android:id="@+id/etCambioCorreoPasajero"
                                     android:theme="@style/Widget.AppCompat.EditText"
+                                    android:enabled="false"
                                     android:inputType="textEmailAddress" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,8 +98,9 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/etpasswordPropietario"
+                                    android:id="@+id/etCambiopasswordPasajero"
                                     android:theme="@style/Widget.AppCompat.EditText"
+                                    android:enabled="false"
                                     android:inputType="textPassword" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,8 +111,10 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/etpassword2Propietario"
-                                    android:inputType="textPassword" />
+                                    android:id="@+id/etCambiopassword2Pasajero"
+                                    android:enabled="false"
+                                    android:inputType="textPassword"
+                                    android:visibility="invisible"/>
                             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -121,13 +127,15 @@
                                 android:layout_height="30dp"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="GUARDAR CAMBIOS"
+                                android:text="EDITAR PERFIL"
                                 android:background="@color/colorRed"
                                 android:textColor="@color/colorWhite"
                                 android:shadowColor="@color/gris"
                                 android:outlineAmbientShadowColor="@color/gris"
 
                                 android:foreground="?attr/selectableItemBackgroundBorderless"
+                                android:onClick="cambiosPasajero"
+                                android:id="@+id/btnCambiosPasajero"
                                 />
                         </TableRow>
 

@@ -19,7 +19,8 @@
 
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-
+            android:focusable="true"
+            android:id="@+id/cvUnidadesPasajero"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
@@ -60,7 +61,8 @@
 
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-
+            android:focusable="true"
+            android:id="@+id/cvFavoritosPasajero"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
@@ -111,7 +113,8 @@
 
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-
+            android:focusable="true"
+            android:id="@+id/cvBuscarUnidades"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
@@ -152,8 +155,8 @@
 
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-
-
+            android:id="@+id/cvPerfilPasaero"
+            android:focusable="true"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
@@ -206,7 +209,8 @@
 
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-
+            android:focusable="true"
+            android:id="@+id/cvConfiguracionPasajero"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
@@ -247,8 +251,8 @@
 
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-
-
+            android:id="@+id/cvSalirPasajero"
+            android:focusable="true"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
