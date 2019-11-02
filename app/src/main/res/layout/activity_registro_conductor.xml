@@ -28,6 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="REGISTRO DE CONDUCTOR  DE MICROBUSES"
+                   android:padding="15dp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="#000000"
                     />
@@ -77,6 +78,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
+                                android:drawableLeft="@drawable/ic_action_person"
                                 android:id="@+id/etNombresConductor"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 android:layout_marginTop="10dp"
@@ -93,6 +95,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:hint="@string/ingrese_apellido"
+                                android:drawableLeft="@drawable/ic_action_person"
                                 android:id="@+id/etApellidosConductor"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 />
@@ -105,6 +108,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingrese_correo"
+                                android:drawableLeft="@drawable/ic_action_email"
                                 android:id="@+id/etCorreoConductor"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 android:inputType="textEmailAddress" />
@@ -117,6 +121,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ingese_contra"
+                                android:drawableLeft="@drawable/ic_action_password"
                                 android:id="@+id/etpasswordConductor"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 android:inputType="textPassword" />
@@ -130,6 +135,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/repita_contra"
+                                android:drawableLeft="@drawable/ic_action_password"
                                 android:id="@+id/etpassword2Conductor"
 
                                 android:inputType="textPassword" />
@@ -146,6 +152,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:hint="Escriba el correo de su jefe"
+                                android:drawableLeft="@drawable/ic_action_jefe"
                                 android:id="@+id/etJefe"
                                 android:theme="@style/Widget.AppCompat.EditText"
                                 />
@@ -160,13 +167,11 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
-                            android:background="@color/colorRed"
+                            android:background="@drawable/boton_redondo"
                             android:textColor="@color/colorWhite"
-                            android:shadowColor="@color/gris"
-                            android:outlineAmbientShadowColor="@color/gris"
                             android:id="@+id/imgconductor"
                             android:onClick="RegistrarmeConductor"
-                            android:foreground="?attr/selectableItemBackgroundBorderless"
+
                             />
                     </TableRow>
                    <!-- <TableRow android:gravity="center_horizontal"
