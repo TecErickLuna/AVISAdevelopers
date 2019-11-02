@@ -49,15 +49,19 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp">
 
-            <LinearLayout
-
-                android:layout_width="match_parent"
+            <TableLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="25dp">
+                android:shrinkColumns="@android:string/selectAll"
+                android:stretchColumns="@android:string/selectAll"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-4dp"
+                >
+            <TableRow>
+            <com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
 
 
-                <EditText
                     android:id="@+id/correoElectronico"
                     style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
                     android:layout_width="369dp"
@@ -65,16 +69,12 @@
                     android:hint="Correo electronico"
                     android:inputType="textEmailSubject" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:paddingTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="25dp">
+            </com.google.android.material.textfield.TextInputLayout>
 
-
-                <EditText
+            </TableRow>
+            <TableRow>
+            <com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordLogin"
                     style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
                     android:layout_width="369dp"
@@ -82,18 +82,30 @@
                     android:hint="Contraseña"
                     android:inputType="textPassword" />
 
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:textColor="@color/colorWhite"
+
+            </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorRed"
+                android:padding="20dp">
+            <Button
+                android:textColor="@drawable/txt_btn_uno_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_uno_login"
                 android:onClick="Logeo"
-                android:paddingBottom="25dp"
+                android:layout_marginBottom="16dp"
                 android:text="Aceptar"
                 android:textStyle="bold"
+                android:textSize="15dp"
                  />
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,5 +134,5 @@
 
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
 </LinearLayout>
