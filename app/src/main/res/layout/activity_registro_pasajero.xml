@@ -68,6 +68,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
+                                android:drawableLeft="@drawable/ic_action_person"
                                 android:hint="@string/ingrese_nombre"
                                 android:theme="@style/Widget.AppCompat.EditText" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -83,6 +84,7 @@
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:drawableLeft="@drawable/ic_action_person"
                                 android:hint="@string/ingrese_apellido"
                                 android:theme="@style/Widget.AppCompat.EditText" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -97,6 +99,7 @@
                                 android:id="@+id/etCorreoPasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_email"
                                 android:hint="@string/ingrese_correo"
                                 android:inputType="textEmailAddress"
                                 android:theme="@style/Widget.AppCompat.EditText" />
@@ -112,6 +115,7 @@
                                 android:id="@+id/etpasswordPasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_password"
                                 android:hint="@string/ingese_contra"
                                 android:inputType="textPassword"
                                 android:theme="@style/Widget.AppCompat.EditText" />
@@ -128,6 +132,7 @@
                                 android:id="@+id/etpassword2Pasajero"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_password"
                                 android:hint="@string/repita_contra"
 
                                 android:inputType="textPassword" />
@@ -143,11 +148,12 @@
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
-                            android:background="@color/colorRed"
+                            android:background="@drawable/boton_redondo"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:outlineAmbientShadowColor="@color/gris"
                             android:shadowColor="@color/gris"
                             android:text="REGISTRARME"
+
                             android:onClick="RegistrarmePasajero"
 
                             android:textColor="@color/colorWhite" />

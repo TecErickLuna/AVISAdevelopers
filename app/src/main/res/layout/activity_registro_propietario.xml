@@ -72,6 +72,7 @@
                         <com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputEditText
                                 android:hint="@string/ingrese_nombre"
+                                android:drawableLeft="@drawable/ic_action_person"
                                 android:layout_width="300dp"
                                 android:layout_height="40dp"
                                 android:layout_gravity="center"
@@ -90,6 +91,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:hint="@string/ingrese_apellido"
+                                android:drawableLeft="@drawable/ic_action_person"
                                 android:id="@+id/etApellidosPropietario"
                                 android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                 />
@@ -101,6 +103,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_email"
                                 android:hint="@string/ingrese_correo"
                                 android:id="@+id/etCorreoPropietario"
                                 android:theme="@style/Widget.AppCompat.EditText"
@@ -113,6 +116,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_password"
                                 android:hint="@string/ingese_contra"
                                 android:id="@+id/etpasswordPropietario"
                                 android:theme="@style/Widget.AppCompat.EditText"
@@ -126,6 +130,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_password"
                                 android:hint="@string/repita_contra"
                                 android:id="@+id/etpassword2Propietario"
 
@@ -143,10 +148,10 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
-                            android:background="@color/colorRed"
+                            android:background="@drawable/boton_redondo"
                             android:shadowColor="@color/gris"
                             android:outlineAmbientShadowColor="@color/gris"
-
+                            android:textColor="@color/colorWhite"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:onClick="RegistrarmePropietario"
                             />
