@@ -5,9 +5,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSpinner;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -15,6 +17,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,6 +30,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
@@ -40,6 +44,8 @@ public class RegistroPasajero extends AppCompatActivity {
     private ImageButton foto;
     private Bitmap bitmap;
     private static int SELECT_PICTURE=1;
+    private static int TAKE_PICTURE = 2;
+    private String name = "";
 
 
     @Override
@@ -54,9 +60,10 @@ public class RegistroPasajero extends AppCompatActivity {
 
         tipo_usuario = "pasajero";
         foto = findViewById(R.id.picRegistroPasajero);
+
     }
 
-    public void RegistrarmeConductor(View view) {
+    public void RegistrarmePasajero(View view) {
 
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -112,28 +119,83 @@ public class RegistroPasajero extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==SELECT_PICTURE && resultCode==RESULT_OK && data!=null && data.getData()!=null){
-            Uri rutaArchivo = data.getData();
-            try {
 
-                bitmap= MediaStore.Images.Media.getBitmap(getContentResolver(),rutaArchivo);
-                foto.setImageBitmap(bitmap);
-            }catch (IOException e){
-                e.printStackTrace();
+        if (requestCode == TAKE_PICTURE ) {
+            if (data != null) {
+                if (data.hasExtra("data")) {
+                    ImageButton iv = (ImageButton) findViewById(R.id.picRegistroPasajero);
+                    iv.setImageBitmap((Bitmap) data.getParcelableExtra("data"));
+                }
+            } else {
+                ImageButton iv = (ImageButton) findViewById(R.id.picRegistroPasajero);
+                iv.setImageBitmap(BitmapFactory.decodeFile(name));
             }
-        }
+        }else if(requestCode == SELECT_PICTURE && resultCode == RESULT_OK && data != null && data.getData() != null)
+            {
+                Uri rutaArchivo = data.getData();
+                try {
+
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), rutaArchivo);
+                    foto.setImageBitmap(bitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
     }
 
-    public void preview(View view) {
+    public void fotopasajero(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        Intent intent = new Intent();
-        intent.setType("image/*");//intent.setType("image/PNG");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+        LayoutInflater inflater = this.getLayoutInflater();
 
+        View v = inflater.inflate(R.layout.cuadrodialogofotopasajero, null);
+
+
+
+        ImageButton camara = (ImageButton)v.findViewById(R.id.btnTomarFotoPasajero);
+        ImageButton galeria = (ImageButton)v.findViewById(R.id.btnTomardeGaleriaPasajero);
+        ImageButton eliminar = (ImageButton)v.findViewById(R.id.btnEliminarFotoPasajero);
+
+        builder.setView(v);
+        builder.create();
+        builder.show();
+
+        galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");//intent.setType("image/PNG");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+
+
+            }
+        });
+        camara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                int code = TAKE_PICTURE;
+                    Uri output = Uri.fromFile(new File(name));
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, output.toString());
+
+                startActivityForResult(intent, code);
+            }
+        });
+
+      /*  eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });*/
 
 
     }
+
+
+
 
 
     /*

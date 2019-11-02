@@ -25,7 +25,7 @@ public class OpcionesFotografiaConductor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opciones_fotografia_conductor);
 
-        foto=findViewById(R.id.ibfoto);
+        foto=findViewById(R.id.picRegistroConductor);
     }
 
 

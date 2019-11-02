@@ -28,12 +28,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnConductorIniciarRuta"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
                     android:src="@drawable/ic_ruta_24dp"
-                    android:padding="10dp" />
+                    android:padding="10dp"
+                   />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -69,7 +71,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnConductorRutas"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -120,7 +123,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnConductorSolicitudes"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -162,7 +166,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnConductorPerfil"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -215,7 +220,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnConductorConfiguracion"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -257,7 +263,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnConductorSalir"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -279,7 +286,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Salir de la aplicacion"
+                    android:text="Cerrar Sesion"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>
