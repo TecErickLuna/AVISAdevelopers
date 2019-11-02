@@ -14,4 +14,7 @@
     <color name="colorBackground">#fcfcfc</color>
     <color name="colorLightGrayLine">#EDEDED</color>
     <color name="colorRed">#D82721</color>
+    <color name="colorUNO">#C8D82121</color>
+    <color name="colorDOS">#fafafa</color>
+
 </resources>
