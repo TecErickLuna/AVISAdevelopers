@@ -28,7 +28,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnPropietarioUnidades"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -50,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Mira las unidades disponibles"
+                    android:text="Mis Unidades"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>
@@ -69,12 +70,13 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnPropietarioFavoritos"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
                     android:src="@drawable/ic_favoritos_24dp"
-                    android:padding="10dp" />
+                    android:padding="15dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -120,7 +122,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnPropietarioAgregar"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -131,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Buscar Unidades"
+                    android:text="Agregar Unidades"
                     android:textColor="#000"/>
                 <View
                     android:layout_width="match_parent"
@@ -142,7 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Encuentra la unidad que necesitas"
+                    android:text="Agrega una nueva unidad"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>
@@ -162,7 +165,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnPropietarioPerfil"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -215,7 +219,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnPropietarioConfig"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -257,7 +262,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnPropietarioSalir"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
@@ -279,7 +285,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Salir de la aplicacion"
+                    android:text="Cerrar Sesion"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>

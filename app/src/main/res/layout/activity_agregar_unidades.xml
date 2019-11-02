@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistroDueno"
+    tools:context=".AgregarUnidades"
     android:padding="20dp"
     android:background="@drawable/header">
 
@@ -33,12 +33,12 @@
                     android:textColor="#000000"
                     />
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
-                    android:src="@drawable/man2"
+                    android:src="@drawable/iconomapamicro"
                     />
             </LinearLayout>
 
@@ -59,9 +59,10 @@
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:hint="Ingrese el 'Alias' de su unidad"
+                                android:layout_width="300dp"
+                                android:layout_height="40dp"
+                                android:hint="Alias de la Unidad"
+                                android:theme="@style/Widget.AppCompat.EditText"
                                 android:id="@+id/etAliasUnidad"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -69,82 +70,83 @@
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:hint="Ingrese la marca de su unidad"
-                                android:id="@+id/etMarcaunidad"
-
+                                android:layout_width="300dp"
+                                android:layout_height="40dp"
+                                android:hint="Correo Conductor Asignado"
+                                android:inputType="textEmailAddress"
+                                android:id="@+id/etConductor"
+                                android:theme="@style/Widget.AppCompat.EditText"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
                     </TableRow>
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:hint="Ingrese el modelo de su unidad"
-                                android:id="@+id/etModeloUnidad"
+                                android:layout_width="300dp"
+                                android:layout_height="40dp"
+                                android:hint="Tarifa $"
+                                android:inputType="numberDecimal"
+                                android:id="@+id/etTarifa"
+                                android:theme="@style/Widget.AppCompat.EditText"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
                     </TableRow>
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:hint="Color base de la unidad"
+                                android:layout_width="300dp"
+                                android:layout_height="40dp"
+                                android:hint="Tipo y Color base de la unidad"
                                 android:id="@+id/etColorbaseUnidad"
+                                android:theme="@style/Widget.AppCompat.EditText"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
                     </TableRow>
                     <TableRow>
                         <com.google.android.material.textfield.TextInputLayout>
                             <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:hint="Color secundario de la unidad(Opc)"
-                                android:id="@+id/etColorsecundarioUnidad"
+                                android:layout_width="300dp"
+                                android:layout_height="40dp"
+                                android:ems="200"
+                                android:hint="Horarios de Salida y Lugar"
+                                android:id="@+id/etHorario"
+                                android:theme="@style/Widget.AppCompat.EditText"
                                 />
                         </com.google.android.material.textfield.TextInputLayout>
                     </TableRow>
                     <TableRow>
-                        <com.google.android.material.textfield.TextInputLayout>
-                            <com.google.android.material.textfield.TextInputEditText
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:hint="Distintivo de su unidad"
-                                android:id="@+id/etDistintivoUnidad"
-                                />
+                                android:text="Recorrido: "/>
 
-                        </com.google.android.material.textfield.TextInputLayout>
+                    </TableRow>
+                    <TableRow>
+                        <Spinner
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/etRecorrido"
+                            android:entries="@array/rutasMicro"
+                            />
                     </TableRow>
                     <TableRow>
                         <androidx.appcompat.widget.AppCompatTextView
-                            android:text="Ingrese fotografias de la unidad"
+                            android:text="Ingrese fotografia de la unidad"
                             android:textColor="@color/color4"
                             />
                     </TableRow>
                     <TableRow android:gravity="center_horizontal">
-                        <com.google.android.material.button.MaterialButton
-                            android:text="Crear Cuenta"
-                            android:background="@color/cafe"
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnPropietarioAgregarUnidad"
+                            android:text="AGREGAR UNIDAD"
+                            android:background="@drawable/btn_uno_login"
                             android:layout_marginBottom="12dp"
                             android:layout_marginTop="12dp"
                             android:gravity="center"
+                            android:textColor="@drawable/txt_btn_uno_login"
                             android:theme="@style/ThemeOverlay.AppCompat.Dark"
                             />
                     </TableRow>
-
-                    <TableRow android:gravity="center_horizontal">
-                        <com.google.android.material.button.MaterialButton
-                            android:text="Crear Cuenta"
-                            android:background="@color/naranja"
-                            android:gravity="center"
-                            android:layout_marginBottom="12dp"
-                            android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                            />
-                    </TableRow>
-
 
                 </TableLayout>
 
