@@ -66,6 +66,7 @@
                     style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
                     android:layout_width="369dp"
                     android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_email"
                     android:hint="Correo electronico"
                     android:inputType="textEmailSubject" />
 
@@ -79,6 +80,7 @@
                     style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
                     android:layout_width="369dp"
                     android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_password"
                     android:hint="Contraseña"
                     android:inputType="textPassword" />
 
@@ -92,7 +94,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp">
+                android:padding="10dp">
             <Button
                 android:textColor="@drawable/txt_btn_uno_login"
                 android:layout_width="match_parent"
