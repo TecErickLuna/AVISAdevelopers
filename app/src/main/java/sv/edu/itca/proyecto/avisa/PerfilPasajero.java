@@ -1,16 +1,19 @@
 package sv.edu.itca.proyecto.avisa;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -26,6 +29,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
@@ -36,6 +40,8 @@ private SharedPreferences misPreferencias;
     private TextInputEditText Correo, contraseña,contraseña2, nombre, apellido;
     private ImageButton fotoPasa;
     private static int SELECT_PICTURE=1;
+    private static int TAKE_PICTURE = 2;
+    private String name = "";
     private String tipo_usuario="pasajero";
     private Bitmap bitmap;
     private String URL = "https://avproyect.000webhostapp.com/registroUsuarios.php";
@@ -140,7 +146,17 @@ private SharedPreferences misPreferencias;
         @Override
         protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
             super.onActivityResult(requestCode, resultCode, data);
-            if (requestCode==SELECT_PICTURE && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+            if (requestCode == TAKE_PICTURE ) {
+                if (data != null) {
+                    if (data.hasExtra("data")) {
+                        ImageButton iv = (ImageButton) findViewById(R.id.fotoPasa);
+                        iv.setImageBitmap((Bitmap) data.getParcelableExtra("data"));
+                    }
+                } else {
+                    ImageButton iv = (ImageButton) findViewById(R.id.fotoPasa);
+                    iv.setImageBitmap(BitmapFactory.decodeFile(name));
+                }
+            }else if (requestCode==SELECT_PICTURE && resultCode==RESULT_OK && data!=null && data.getData()!=null){
                 Uri rutaArchivo = data.getData();
                 try {
 
@@ -152,19 +168,60 @@ private SharedPreferences misPreferencias;
             }
         }
 
-        public void preview(View view) {
 
-            Intent intent = new Intent();
-            intent.setType("image/*");//intent.setType("image/PNG");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+    public void editFotoPasajero(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
+        LayoutInflater inflater = this.getLayoutInflater();
 
-
-        }
+        View v = inflater.inflate(R.layout.cuadrodialog_foto_edit_pasajero, null);
 
 
-        //AQUI GUARDAREMOS NUEVAMENTE LOS DATOS.
+
+        ImageButton camara = (ImageButton)v.findViewById(R.id.btnTomarFotoPasajeroActu);
+        ImageButton galeria = (ImageButton)v.findViewById(R.id.btnTomardeGaleriaPasajeroActu);
+        ImageButton eliminar = (ImageButton)v.findViewById(R.id.btnEliminarFotoPasajeroActu);
+
+        builder.setView(v);
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");//intent.setType("image/PNG");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+                alertDialog.dismiss();
+            }
+        });
+
+        camara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                int code = TAKE_PICTURE;
+                Uri output = Uri.fromFile(new File(name));
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, output.toString());
+
+                startActivityForResult(intent, code);
+                alertDialog.dismiss();
+            }
+        });
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
+
+
+    }
+
+
+    //AQUI GUARDAREMOS NUEVAMENTE LOS DATOS.
 
     }
 

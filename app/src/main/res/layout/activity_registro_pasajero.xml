@@ -148,7 +148,7 @@
                             android:layout_height="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
-                            android:background="@drawable/boton_redondo"
+                            android:background="@drawable/btn_uno_login"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:outlineAmbientShadowColor="@color/gris"
                             android:shadowColor="@color/gris"
@@ -156,7 +156,7 @@
 
                             android:onClick="RegistrarmePasajero"
 
-                            android:textColor="@color/colorWhite" />
+                            android:textColor="@drawable/txt_btn_uno_login" />
                     </TableRow>
 
 

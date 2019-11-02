@@ -3,13 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="405dp">
+        android:layout_height="300dp">
+
         <LinearLayout
             android:background="@drawable/gradientbackground"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:orientation="vertical">
             <ImageView
                 android:layout_marginTop="45dp"
@@ -113,6 +123,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnEditPerfilPasajero"
         android:layout_width="98dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -120,6 +131,9 @@
         android:background="@drawable/boton_redondo"
         android:text="Modificar"
         android:textColor="#fff" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

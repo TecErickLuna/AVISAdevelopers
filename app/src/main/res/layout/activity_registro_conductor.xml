@@ -167,8 +167,8 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
                             android:text="REGISTRARME"
-                            android:background="@drawable/boton_redondo"
-                            android:textColor="@color/colorWhite"
+                            android:background="@drawable/btn_uno_login"
+                            android:textColor="@drawable/txt_btn_uno_login"
                             android:id="@+id/imgconductor"
                             android:onClick="RegistrarmeConductor"
 

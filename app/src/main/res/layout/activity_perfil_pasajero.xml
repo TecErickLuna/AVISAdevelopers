@@ -26,14 +26,14 @@
 
 
                     <androidx.appcompat.widget.AppCompatImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
                         android:layout_gravity="center"
                         android:background="@drawable/boton_redondo"
                         android:layout_marginTop="10dp"
                         android:src="@drawable/man2"
                         android:id="@+id/fotoPasa"
-                        android:onClick="preview"
+                        android:onClick="editFotoPasajero"
                         />
 
                 </LinearLayout>
@@ -77,7 +77,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:id="@+id/etCambioApellidosPasajero"
-                                    android:enabled="false"
+                                    android:enabled="true"
                                     android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                                     />
                             </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +90,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/etCambioCorreoPasajero"
                                     android:theme="@style/Widget.AppCompat.EditText"
-                                    android:enabled="false"
+                                    android:enabled="true"
                                     android:inputType="textEmailAddress" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +102,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/etCambiopasswordPasajero"
                                     android:theme="@style/Widget.AppCompat.EditText"
-                                    android:enabled="false"
+                                    android:enabled="true"
                                     android:inputType="textPassword" />
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,7 +114,7 @@
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/etCambiopassword2Pasajero"
-                                    android:enabled="false"
+                                    android:enabled="true"
                                     android:inputType="textPassword"
                                     android:visibility="invisible"/>
                             </com.google.android.material.textfield.TextInputLayout>
@@ -129,9 +129,9 @@
                                 android:layout_height="30dp"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="EDITAR PERFIL"
-                                android:background="@color/colorRed"
-                                android:textColor="@color/colorWhite"
+                                android:text="GUARDAR PERFIL"
+                                android:background="@drawable/btn_uno_login"
+                                android:textColor="@drawable/txt_btn_uno_login"
                                 android:shadowColor="@color/gris"
                                 android:outlineAmbientShadowColor="@color/gris"
 
