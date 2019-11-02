@@ -81,7 +81,7 @@ public class Login_Form extends AppCompatActivity {
 
     public void crearCuenta(View view) {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         LayoutInflater inflater = this.getLayoutInflater();
 
@@ -94,14 +94,16 @@ public class Login_Form extends AppCompatActivity {
         Button tpropietario = (Button)v.findViewById(R.id.tipoPropietario);
 
         builder.setView(v);
-        builder.create();
-        builder.show();
+        final AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
 
        tpasajero.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
                Intent rpasajero = new Intent(Login_Form.this, RegistroPasajero.class);
                startActivity(rpasajero);
+               alertDialog.dismiss();
            }
        });
 
@@ -110,6 +112,7 @@ public class Login_Form extends AppCompatActivity {
            public void onClick(View view) {
                Intent rconductor = new Intent(Login_Form.this, RegistroConductor.class);
                startActivity(rconductor);
+               alertDialog.dismiss();
            }
        });
 
@@ -118,6 +121,8 @@ public class Login_Form extends AppCompatActivity {
            public void onClick(View view) {
                Intent rpropietario = new Intent(Login_Form.this, RegistroPropietario.class);
                startActivity(rpropietario);
+               alertDialog.dismiss();
+
            }
        });
 

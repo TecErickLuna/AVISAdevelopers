@@ -155,8 +155,8 @@ public class RegistroPropietario extends AppCompatActivity {
         ImageButton eliminar = (ImageButton)v.findViewById(R.id.btnEliminarFotoPropietario);
 
         builder.setView(v);
-        builder.create();
-        builder.show();
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,6 +165,7 @@ public class RegistroPropietario extends AppCompatActivity {
                 intent.setType("image/*");//intent.setType("image/PNG");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+                alertDialog.dismiss();
             }
         });
 
@@ -177,15 +178,16 @@ public class RegistroPropietario extends AppCompatActivity {
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, output.toString());
 
                 startActivityForResult(intent, code);
+                alertDialog.dismiss();
             }
         });
 
-     /*  eliminar.setOnClickListener(new View.OnClickListener() {
+    eliminar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-
+               alertDialog.dismiss();
            }
-       }); */
+       });
 
     }
 /*
