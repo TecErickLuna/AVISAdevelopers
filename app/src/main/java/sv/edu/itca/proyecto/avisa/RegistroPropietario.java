@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatSpinner;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -28,6 +29,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -42,6 +44,8 @@ public class RegistroPropietario extends AppCompatActivity {
     private ImageButton foto;
     private Bitmap bitmap;
     private static int SELECT_PICTURE=1;
+    private static int TAKE_PICTURE = 2;
+    private String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +118,17 @@ public class RegistroPropietario extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==SELECT_PICTURE && resultCode==RESULT_OK && data!=null && data.getData()!=null){
+        if (requestCode == TAKE_PICTURE ) {
+            if (data != null) {
+                if (data.hasExtra("data")) {
+                    ImageButton iv = (ImageButton) findViewById(R.id.imgpropietario);
+                    iv.setImageBitmap((Bitmap) data.getParcelableExtra("data"));
+                }
+            } else {
+                ImageButton iv = (ImageButton) findViewById(R.id.imgpropietario);
+                iv.setImageBitmap(BitmapFactory.decodeFile(name));
+            }
+        }else if (requestCode==SELECT_PICTURE && resultCode==RESULT_OK && data!=null && data.getData()!=null){
             Uri rutaArchivo = data.getData();
             try {
 
@@ -126,14 +140,52 @@ public class RegistroPropietario extends AppCompatActivity {
         }
     }
 
-    public void previewPropietario(View view) {
 
-        Intent intent = new Intent();
-        intent.setType("image/*");//intent.setType("image/PNG");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+    public void Propietario(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        LayoutInflater inflater = this.getLayoutInflater();
+
+        View v = inflater.inflate(R.layout.cuadrodialogofotopropietario, null);
 
 
+
+        ImageButton camara = (ImageButton)v.findViewById(R.id.btnTomarFotoPropietario);
+        ImageButton galeria = (ImageButton)v.findViewById(R.id.btnTomardeGaleriaPropietario);
+        ImageButton eliminar = (ImageButton)v.findViewById(R.id.btnEliminarFotoPropietario);
+
+        builder.setView(v);
+        builder.create();
+        builder.show();
+
+        galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");//intent.setType("image/PNG");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,"seleccione una imagen"),SELECT_PICTURE);
+            }
+        });
+
+        camara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                int code = TAKE_PICTURE;
+                Uri output = Uri.fromFile(new File(name));
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, output.toString());
+
+                startActivityForResult(intent, code);
+            }
+        });
+
+     /*  eliminar.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+           }
+       }); */
 
     }
 /*
