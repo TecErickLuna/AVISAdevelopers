@@ -39,6 +39,8 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton_redondo"
                     android:src="@drawable/iconomapamicro"
+                    android:onClick="fotoconductor"
+                    android:id="@+id/fotoMicro"
                     />
             </LinearLayout>
 
