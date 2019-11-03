@@ -131,8 +131,10 @@ public class Login_Form extends AppCompatActivity {
 
     public void Logeo(View view) {
 
-        if(correoElectronico.getText().toString().isEmpty() || pass.getText().toString().isEmpty()){
-            Toast.makeText(Login_Form.this,"ERROR: no deje campos vacios",Toast.LENGTH_LONG).show();
+        if(correoElectronico.getText().toString().isEmpty()){
+            correoElectronico.setError("Campo Requerido");
+        }else if(pass.getText().toString().isEmpty()){
+            pass.setError("Campo Requerido");
         }
         else
         {
