@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="25dp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boton_redondo"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/man2"
+                    android:id="@+id/fotoPasa"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bordes_redondeados"
+                >
+
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/formRegistroPasajero"
+                    android:shrinkColumns="@android:string/selectAll"
+                    android:stretchColumns="@android:string/selectAll"
+                    android:layout_gravity="center"
+                    >
+                    <TableRow>
+                        <com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="300dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:drawableLeft="@drawable/ic_action_person"
+                                android:id="@+id/etCambioNombresConductor"
+                                android:enabled="false"
+                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+                    <TableRow>
+                        <com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableLeft="@drawable/ic_action_person"
+                                android:id="@+id/etCambioApellidosConductor"
+                                android:enabled="false"
+                                android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+                                />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+                    <TableRow>
+                        <com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/etCambioCorreoConductor"
+                                android:drawableLeft="@drawable/ic_action_email"
+                                android:theme="@style/Widget.AppCompat.EditText"
+                                android:enabled="false"
+                                android:inputType="textEmailAddress" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+                    <TableRow>
+                        <com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/etCambiopasswordConductor"
+                                android:theme="@style/Widget.AppCompat.EditText"
+                                android:enabled="false"
+                                android:inputType="textPassword"
+                                android:drawableLeft="@drawable/ic_action_password"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </TableRow>
+                    <TableRow>
+                        <com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/ic_action_password"
+                                android:id="@+id/etCambiopassword2Conductor"
+                                android:enabled="false"
+                                android:inputType="textPassword"
+                                android:visibility="invisible"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </TableRow>
+                    <TableRow>
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="EDITAR PERFIL"
+                            android:background="@drawable/btn_uno_login"
+                            android:textColor="@drawable/txt_btn_uno_login"
+                            android:shadowColor="@color/gris"
+                            android:outlineAmbientShadowColor="@color/gris"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:id="@+id/btnEditarPerfilConductor"
+                            />
+                    </TableRow>
+
+                    <TableRow>
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="GUARDAR PERFIL"
+                            android:background="@drawable/btn_uno_login"
+                            android:textColor="@drawable/txt_btn_uno_login"
+                            android:shadowColor="@color/gris"
+                            android:outlineAmbientShadowColor="@color/gris"
+                            android:enabled="false"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:id="@+id/btnCambiosConductor"
+                            />
+                    </TableRow>
+
+                    <TableRow>
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="CERRAR"
+                            android:background="@drawable/btn_cuadro_login"
+                            android:textStyle="bold"
+                            android:shadowColor="@color/gris"
+                            android:outlineAmbientShadowColor="@color/gris"
+                            android:enabled="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:id="@+id/btnCerrarConductor"
+                            />
+                    </TableRow>
+
+
+                </TableLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

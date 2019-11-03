@@ -39,7 +39,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 public class RegistroConductor extends AppCompatActivity {
-    private TextInputEditText Correo, contraseña, nombre, apellido;
+    private TextInputEditText Correo, contraseña,contraseña2, nombre, apellido;
     private String tipo_usuario="conductor";
     private String URL = "https://avproyect.000webhostapp.com/registroUsuarios.php";
     private EditText jefe;
@@ -57,6 +57,7 @@ public class RegistroConductor extends AppCompatActivity {
 
         Correo = findViewById(R.id.etCorreoConductor);
         contraseña = findViewById(R.id.etpasswordConductor);
+        contraseña2 = findViewById(R.id.etpassword2Conductor);
         nombre = findViewById(R.id.etNombresConductor);
         apellido = findViewById(R.id.etApellidosConductor);
         jefe=findViewById(R.id.etJefe);
@@ -67,46 +68,60 @@ public class RegistroConductor extends AppCompatActivity {
 
     public void RegistrarmeConductor(View view) {
 
-        StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        String contraConductor = contraseña2.getText().toString();
 
-                if (response.equals("Error")) {
-                    Toast.makeText(RegistroConductor.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
-                } else if (response.equals("Subio imagen Correctamente")) {
+        if(nombre.getText().toString().isEmpty()){
+            nombre.setError("Dato Requerido");
+        } else if(apellido.getText().toString().isEmpty()) {
+            apellido.setError("Dato Requerido");
+        } else if(Correo.getText().toString().isEmpty()) {
+            Correo.setError("Dato Requerido");
+        } else if(!contraseña.getText().toString().equals(contraConductor)) {
+            contraseña.setError("Contraseñas no Coinciden");
+        } else if(jefe.getText().toString().isEmpty()) {
+            jefe.setError("Dato Requerido");
+        }else {
 
-                    Toast.makeText(RegistroConductor.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_SHORT).show();
-                    finish();
+            StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+
+                    if (response.equals("Error")) {
+                        Toast.makeText(RegistroConductor.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
+                    } else if (response.equals("Subio imagen Correctamente")) {
+
+                        Toast.makeText(RegistroConductor.this, "Cuenta Registrada Exitosamente", Toast.LENGTH_SHORT).show();
+                        finish();
+
+                    } else {
+                        Toast.makeText(RegistroConductor.this, "Error php: \n" + response, Toast.LENGTH_LONG).show();
+                    }
 
                 }
-                else {
-                    Toast.makeText(RegistroConductor.this,"Error php: \n"+response,Toast.LENGTH_LONG).show();
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(RegistroConductor.this, "Acceso denegado :( \n" + error, Toast.LENGTH_LONG).show();
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> parametros = new Hashtable<String, String>();
+                    parametros.put("correo", Correo.getText().toString().trim());
+                    parametros.put("contraseña", contraseña.getText().toString().trim());
+                    parametros.put("nombre", nombre.getText().toString().trim());
+                    parametros.put("apellido", apellido.getText().toString().trim());
+                    parametros.put("jefe", jefe.getText().toString().trim());
+                    parametros.put("tipo_usuario", tipo_usuario);
+                    parametros.put("imagen", getStringImage(bitmap));
+                    return parametros;
                 }
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegistroConductor.this, "Acceso denegado :( \n"+error, Toast.LENGTH_LONG).show();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new Hashtable<String, String>();
-                parametros.put("correo", Correo.getText().toString().trim());
-                parametros.put("contraseña", contraseña.getText().toString().trim());
-                parametros.put("nombre", nombre.getText().toString().trim());
-                parametros.put("apellido", apellido.getText().toString().trim());
-                parametros.put("jefe", jefe.getText().toString().trim());
-                parametros.put("tipo_usuario", tipo_usuario);
-                parametros.put("imagen", getStringImage(bitmap) );
-                return parametros;
-            }
+            };
 
-        };
-
-        RequestQueue rQ = Volley.newRequestQueue(RegistroConductor.this);
-        rQ.add(request);
+            RequestQueue rQ = Volley.newRequestQueue(RegistroConductor.this);
+            rQ.add(request);
+        }
     }
 
     private String getStringImage(Bitmap bitmap) {
