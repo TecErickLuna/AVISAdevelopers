@@ -52,7 +52,7 @@ private CardView perfil;
       perfil.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              Intent rpasajero = new Intent(InicioPasajero.this, Opcion_perfil.class);
+              Intent rpasajero = new Intent(InicioPasajero.this, PerfilPasajero.class);
               startActivity(rpasajero);
           }
       });

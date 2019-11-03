@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Unidades"
+                    android:text="Mis Unidades"
                     android:textColor="#000"/>
                 <View
                     android:layout_width="match_parent"
@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Favoritos"
+                    android:text="Añadir"
                     android:textColor="#000"/>
                 <View
                     android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Lista de tus unidades favoritas"
+                    android:text="Agregar Unidades al Sistema"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>

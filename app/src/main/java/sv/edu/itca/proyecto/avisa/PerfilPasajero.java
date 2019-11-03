@@ -27,6 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -37,6 +38,7 @@ import java.util.Map;
 public class PerfilPasajero extends AppCompatActivity {
 private Button cambios;
 private SharedPreferences misPreferencias;
+private SharedPreferences.Editor editar;
     private TextInputEditText Correo, contraseña,contraseña2, nombre, apellido;
     private ImageButton fotoPasa;
     private static int SELECT_PICTURE=1;
@@ -44,7 +46,7 @@ private SharedPreferences misPreferencias;
     private String name = "";
     private String tipo_usuario="pasajero";
     private Bitmap bitmap;
-    private String URL = "https://avproyect.000webhostapp.com/registroUsuarios.php";
+    private String URL = "https://avproyect.000webhostapp.com/actualizarUsuarios.php";
 
 
     @Override
@@ -67,6 +69,10 @@ private SharedPreferences misPreferencias;
         contraseña.setText(misPreferencias.getString("contraseña",""));
         nombre.setText(misPreferencias.getString("nombre",""));
         apellido.setText(misPreferencias.getString("apellido",""));
+
+        fotoPasa.setEnabled(false);
+
+        Picasso.get().load("https://avproyect.000webhostapp.com/fotos/"+Correo.getText().toString()+".png").into(fotoPasa);
 
     }
 
@@ -114,7 +120,7 @@ private SharedPreferences misPreferencias;
                     parametros.put("apellido", apellido.getText().toString().trim());
                     parametros.put("jefe", "N/A");
                     parametros.put("tipo_usuario", tipo_usuario);
-                    parametros.put("imagen", getStringImage(bitmap) );
+                    parametros.put("rutaFoto",misPreferencias.getString("rutaFoto",""));
                     return parametros;
                 }
 
@@ -130,10 +136,18 @@ private SharedPreferences misPreferencias;
             contraseña2.setEnabled(false);
             contraseña2.setVisibility(View.INVISIBLE);
             cambios.setText("EDITAR PERFIL");
+
+            editar = misPreferencias.edit();
+            editar.putString("correo",Correo.getText().toString());
+            editar.putString("contraseña",contraseña.getText().toString());
+            editar.putString("nombre",nombre.getText().toString());
+            editar.putString("apellido",apellido.getText().toString());
+            editar.putString("tipo_usuario",tipo_usuario);
+            editar.commit();
         }
 
     }
-
+/*
         private String getStringImage(Bitmap bitmap) {
             ByteArrayOutputStream bObj = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG,100,bObj);
@@ -218,7 +232,7 @@ private SharedPreferences misPreferencias;
         });
 
 
-    }
+    }*/
 
 
     //AQUI GUARDAREMOS NUEVAMENTE LOS DATOS.
