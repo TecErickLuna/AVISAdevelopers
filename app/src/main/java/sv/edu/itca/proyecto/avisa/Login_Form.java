@@ -175,7 +175,7 @@ public class Login_Form extends AppCompatActivity {
                             editar.commit();
 
                             if (tipo_usuario.equals("conductor")){
-                                Intent mostrar = new Intent(Login_Form.this, InicioConductor.class);
+                                Intent mostrar = new Intent(Login_Form.this, InicioPasajero.class);
                                 startActivity(mostrar);
                                 finish();
                             }

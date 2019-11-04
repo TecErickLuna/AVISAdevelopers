@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegistroPasajero"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bordes_redondeados"
+        android:orientation="horizontal">
+
+
+    <TableLayout
+        android:id="@+id/formRegistroPasajero"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-14dp"
+        android:shrinkColumns="@android:string/selectAll"
+        android:stretchColumns="@android:string/selectAll">
+
+    <TableRow>
+
+        <com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etBuscarUnidad"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint="Buscar po Alias"
+                android:theme="@style/Widget.AppCompat.EditText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </TableRow>
+
+    </TableLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBuscarUnidad"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_uno_login"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:outlineAmbientShadowColor="@color/gris"
+            android:shadowColor="@color/gris"
+            android:text="BUSCAR"
+            android:textColor="@drawable/txt_btn_uno_login" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="90dp"
+        android:gravity="center">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/txtApellido"
+            android:textSize="15dp"
+            android:enabled="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCargo"
+            android:enabled="false"/>
+    </LinearLayout>
+</RelativeLayout>

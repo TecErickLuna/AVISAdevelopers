@@ -1,17 +1,35 @@
 package sv.edu.itca.proyecto.avisa;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class InicioPasajero extends AppCompatActivity {
     private ImageButton Unidades, Favoritas, Buscar, Perfil, Config, Salir;
+    private EditText ApellidoPrueba;
+
 private Layout layout;
 private CardView perfil;
     @Override
@@ -25,6 +43,9 @@ private CardView perfil;
         Perfil=findViewById(R.id.btnPasajeroPerfil);
         Config=findViewById(R.id.btnPasajeroConfig);
         Salir=findViewById(R.id.btnPasajeroSalir);
+
+
+
 
         perfil=(CardView) findViewById(R.id.cvPerfilPasaero);
 
@@ -45,7 +66,10 @@ private CardView perfil;
       Buscar.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              Toast.makeText(getApplicationContext(),"Nose si lo pondremos en verdad",Toast.LENGTH_LONG).show();
+              Toast.makeText(getApplicationContext(),"Buscar Unidades",Toast.LENGTH_LONG).show();
+              Intent rpasajero = new Intent(InicioPasajero.this, BuscarUnidades.class);
+              startActivity(rpasajero);
+
           }
       });
 
@@ -67,7 +91,28 @@ private CardView perfil;
       Salir.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              finish();
+              final AlertDialog.Builder builder = new AlertDialog.Builder(InicioPasajero.this);
+              builder.setMessage("Opciones");
+              builder.setCancelable(false);
+              builder.setTitle("Seguro que desea Salir?");
+
+              builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialogInterface, int i) {
+                      finish();
+                  }
+              });
+
+              builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialogInterface, int i) {
+                      dialogInterface.dismiss();
+                  }
+              });
+
+              builder.create();
+              builder.show();
+
           }
       });
 /*
