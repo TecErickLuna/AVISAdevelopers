@@ -4,8 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -99,6 +101,7 @@ private CardView perfil;
               builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
                   @Override
                   public void onClick(DialogInterface dialogInterface, int i) {
+                      clearProfile();
                       finish();
                   }
               });
@@ -124,6 +127,26 @@ private CardView perfil;
                 startActivity(mostrar);
             }
         });*/
+
+
+    }
+    private void clearProfile() {
+
+        SharedPreferences preferences;
+        Context context = this.getApplicationContext();
+        preferences=context.getSharedPreferences("logeo", Context.MODE_PRIVATE);
+        //Para borrar el registro de algun dato en elfichero compartido
+        // sencillamente empleamos el metodo remove(key)
+        // del objeto SharedPreferences.Editor
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("correo");
+        editor.remove("contraseña");
+        editor.remove("nombre");
+        editor.remove("apellido");
+        editor.remove("jefe");
+        editor.remove("tipo_usuario");
+        editor.remove("rutaFoto");
+        editor.commit();
 
 
     }

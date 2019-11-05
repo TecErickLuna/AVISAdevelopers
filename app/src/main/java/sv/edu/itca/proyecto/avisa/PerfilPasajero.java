@@ -39,12 +39,12 @@ public class PerfilPasajero extends AppCompatActivity {
 private Button cambios;
 private SharedPreferences misPreferencias;
 private SharedPreferences.Editor editar;
-    private TextInputEditText Correo, contraseña,contraseña2, nombre, apellido;
+    private TextInputEditText Correo, contraseña,contraseña2, nombre, apellido,jefe;
     private ImageButton fotoPasa;
     private static int SELECT_PICTURE=1;
     private static int TAKE_PICTURE = 2;
     private String name = "";
-    private String tipo_usuario="pasajero";
+    private String tipo_usuario;
     private Bitmap bitmap;
     private String URL = "https://avproyect.000webhostapp.com/actualizarUsuarios.php";
 
@@ -61,6 +61,7 @@ private SharedPreferences.Editor editar;
         nombre = findViewById(R.id.etCambioNombresPasajero);
         apellido = findViewById(R.id.etCambioApellidosPasajero);
         fotoPasa=findViewById(R.id.fotoPasa);
+        jefe=findViewById(R.id.etCambioJefePasajero);
 
 
         Context context=this.getApplicationContext();
@@ -69,6 +70,15 @@ private SharedPreferences.Editor editar;
         contraseña.setText(misPreferencias.getString("contraseña",""));
         nombre.setText(misPreferencias.getString("nombre",""));
         apellido.setText(misPreferencias.getString("apellido",""));
+
+        tipo_usuario=misPreferencias.getString("tipo_usuario","");
+
+        if (jefe.getText().toString().equals("conductor")){
+            jefe.setVisibility(View.VISIBLE);
+        }
+        else{
+            jefe.setVisibility(View.INVISIBLE);
+        }
 
         fotoPasa.setEnabled(false);
 
@@ -84,6 +94,7 @@ private SharedPreferences.Editor editar;
             contraseña2.setEnabled(true);
             nombre.setEnabled(true);
             apellido.setEnabled(true);
+            jefe.setEnabled(true);
             cambios.setText("GUARDAR CAMBIOS");
         }
         else if (cambios.getText().equals("GUARDAR CAMBIOS")){
@@ -118,7 +129,7 @@ private SharedPreferences.Editor editar;
                     parametros.put("contraseña", contraseña.getText().toString().trim());
                     parametros.put("nombre", nombre.getText().toString().trim());
                     parametros.put("apellido", apellido.getText().toString().trim());
-                    parametros.put("jefe", "N/A");
+                    parametros.put("jefe", jefe.getText().toString());
                     parametros.put("tipo_usuario", tipo_usuario);
                     parametros.put("rutaFoto",misPreferencias.getString("rutaFoto",""));
                     return parametros;
@@ -134,6 +145,7 @@ private SharedPreferences.Editor editar;
             Correo.setEnabled(false);
             contraseña.setEnabled(false);
             contraseña2.setEnabled(false);
+            jefe.setEnabled(false);
             contraseña2.setVisibility(View.INVISIBLE);
             cambios.setText("EDITAR PERFIL");
 

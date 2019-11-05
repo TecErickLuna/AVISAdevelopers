@@ -3,6 +3,8 @@ package sv.edu.itca.proyecto.avisa;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -110,8 +112,30 @@ public class InicioConductor extends AppCompatActivity {
         Salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clearProfile();
                 finish();
             }
         });
+    }
+
+    private void clearProfile() {
+
+        SharedPreferences preferences;
+        Context context = this.getApplicationContext();
+        preferences=context.getSharedPreferences("logeo", Context.MODE_PRIVATE);
+        //Para borrar el registro de algun dato en elfichero compartido
+        // sencillamente empleamos el metodo remove(key)
+        // del objeto SharedPreferences.Editor
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("correo");
+        editor.remove("contraseña");
+        editor.remove("nombre");
+        editor.remove("apellido");
+        editor.remove("jefe");
+        editor.remove("tipo_usuario");
+        editor.remove("rutaFoto");
+        editor.commit();
+
+
     }
 }

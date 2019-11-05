@@ -103,6 +103,20 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:layout_width="300dp"
                                     android:layout_height="wrap_content"
+                                    android:id="@+id/etCambioJefePasajero"
+                                    android:enabled="false"
+                                    android:hint="Ingrese el correo de su nuevo Jefe"
+                                    android:inputType="textEmailAddress"
+                                    android:visibility="invisible"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </TableRow>
+                        <TableRow>
+                            <com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="300dp"
+                                    android:layout_height="wrap_content"
                                     android:id="@+id/etCambiopasswordPasajero"
                                     android:theme="@style/Widget.AppCompat.EditText"
                                     android:enabled="false"
