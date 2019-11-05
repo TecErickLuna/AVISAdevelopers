@@ -78,14 +78,14 @@ public class RegistroPasajero extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(RegistroPasajero.this,"Error php: \n"+response,Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegistroPasajero.this,"Error de BD",Toast.LENGTH_LONG).show();
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegistroPasajero.this, "Acceso denegado :( \n"+error, Toast.LENGTH_LONG).show();
+                Toast.makeText(RegistroPasajero.this, "Acceso denegado :(", Toast.LENGTH_LONG).show();
             }
         }) {
             @Override

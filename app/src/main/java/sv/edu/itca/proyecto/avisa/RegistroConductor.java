@@ -94,14 +94,14 @@ public class RegistroConductor extends AppCompatActivity {
                         finish();
 
                     } else {
-                        Toast.makeText(RegistroConductor.this, "Error php: \n" + response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegistroConductor.this, "Error con la BD", Toast.LENGTH_LONG).show();
                     }
 
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(RegistroConductor.this, "Acceso denegado :( \n" + error, Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegistroConductor.this, "Acceso denegado :(", Toast.LENGTH_LONG).show();
                 }
             }) {
                 @Override

@@ -106,6 +106,7 @@ public class BuscarUnidades extends AppCompatActivity {
                         rutatexto.setText(jsonObject.getString("imagen"));
 
 
+
                         Picasso.get().load(rutatexto.getText().toString()).into(imgMicro);
 
                     } catch (JSONException e) {

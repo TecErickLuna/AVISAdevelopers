@@ -4,7 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,21 +34,58 @@ public class InicioConductor extends AppCompatActivity {
         IniciarRuta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Activity Iniciar Ruta",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"en Desarrollo",Toast.LENGTH_LONG).show();
             }
         });
 
         Rutas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Activity Rutas",Toast.LENGTH_LONG).show();
+
+                Toast.makeText(getApplicationContext(),"Rutas",Toast.LENGTH_LONG).show();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(InicioConductor.this);
+
+                LayoutInflater inflater = InicioConductor.this.getLayoutInflater();
+
+                View v = inflater.inflate(R.layout.cuadrodialogo_rutas, null);
+
+
+
+                Button meta = (Button)v.findViewById(R.id.mostrar_rutameta);
+                Button ahuacha = (Button)v.findViewById(R.id.mostrar_rutaahuacha);
+
+                builder.setView(v);
+                final AlertDialog alertDialog = builder.create();
+
+                alertDialog.show();
+
+                meta.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                        Intent rpasajero = new Intent(InicioConductor.this, MapaRutaAhuacha.class);
+                        startActivity(rpasajero);
+                    }
+                });
+
+                ahuacha.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                        Intent rpasajero = new Intent(InicioConductor.this, MapaRutaMetapan.class);
+                        startActivity(rpasajero);
+
+                    }
+                });
             }
         });
 
         Solicitudes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Activity Solicitudes",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Buscar",Toast.LENGTH_LONG).show();
+                Intent rpasajero = new Intent(InicioConductor.this, BuscarUnidades.class);
+                startActivity(rpasajero);
             }
         });
 
@@ -105,15 +145,80 @@ public class InicioConductor extends AppCompatActivity {
         Config.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Activity Configuracion",Toast.LENGTH_LONG).show();
+
+                final AlertDialog.Builder builder = new AlertDialog.Builder(InicioConductor.this);
+
+                LayoutInflater inflater = InicioConductor.this.getLayoutInflater();
+
+                View v = inflater.inflate(R.layout.video, null);
+
+
+
+                ImageButton face = (ImageButton)v.findViewById(R.id.btnFacebook);
+                ImageButton inta = (ImageButton)v.findViewById(R.id.btnInstagram);
+                ImageButton twit = (ImageButton)v.findViewById(R.id.btnTwitter);
+
+
+                builder.setView(v);
+                final AlertDialog alertDialog = builder.create();
+
+                alertDialog.show();
+                face.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(),"Contactanos",Toast.LENGTH_LONG).show();
+                        Uri uri = Uri.parse("https://www.facebook.com/profile.php?id=100043481850033");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+
+                    }
+                });
+                inta.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(),"Contactanos",Toast.LENGTH_LONG).show();
+                        Uri uri = Uri.parse("https://www.instagram.com/avisavamos/?hl=es-la");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+                });
+
+                twit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getApplicationContext(), "en Mantenimiento...", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         });
 
         Salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clearProfile();
-                finish();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(InicioConductor.this);
+                builder.setMessage("Opciones");
+                builder.setCancelable(false);
+                builder.setTitle("Seguro que desea Salir?");
+
+                builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        clearProfile();
+                        finish();
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.create();
+                builder.show();
             }
         });
     }

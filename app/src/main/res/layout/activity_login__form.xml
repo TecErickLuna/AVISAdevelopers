@@ -7,6 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login_Form">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
@@ -25,7 +33,7 @@
      android:text="Bienvenid@"
      android:textStyle="bold"
      android:textSize="40dp"
-     android:layout_marginTop="-43dp"
+     android:layout_marginTop="-63dp"
      android:fontFamily="cursive"
      android:textColor="#000000"/>
 
@@ -117,7 +125,9 @@
                     style="@style/Widget.AppCompat.Light.ActionButton.Overflow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Olvide mi contraseña"
+                    android:text="Acerca de..."
+                    android:id="@+id/acercade"
+                    android:onClick="veracercade"
                     />
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -136,5 +146,7 @@
 
             </LinearLayout>
         </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

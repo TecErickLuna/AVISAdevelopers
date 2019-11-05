@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BuscarUnidades"></activity>
+        <activity android:name=".AcercadeyVideo"></activity>
+        <activity android:name=".BuscarUnidades" />
         <activity android:name=".Opcion_perfil" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -21,10 +22,12 @@
         -->
         <activity
             android:name=".MapaRutaMetapan"
-            android:label="@string/title_activity_mapa_ruta_metapan" />
+            android:label="@string/title_activity_mapa_ruta_metapan"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MapaRutaAhuacha"
-            android:label="@string/title_activity_mapa_ruta_ahuacha" />
+            android:label="@string/title_activity_mapa_ruta_ahuacha"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -60,11 +63,11 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

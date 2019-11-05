@@ -77,14 +77,14 @@ public class RegistroPropietario extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(RegistroPropietario.this,"Error php: \n"+response,Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegistroPropietario.this,"Error de Bd",Toast.LENGTH_LONG).show();
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(RegistroPropietario.this, "Acceso denegado :( \n"+error, Toast.LENGTH_LONG).show();
+                Toast.makeText(RegistroPropietario.this, "Acceso denegado :(", Toast.LENGTH_LONG).show();
             }
         }) {
             @Override

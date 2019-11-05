@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/btn_cuadro_login"
+    android:background="@drawable/bg_tipocuenta"
    >
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -14,6 +14,7 @@
         android:padding="10dp"
         android:layout_marginLeft="50dp"
         android:gravity="center"
+
       >
 
         <Button

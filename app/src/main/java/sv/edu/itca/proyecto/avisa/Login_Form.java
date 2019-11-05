@@ -23,6 +23,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,12 +34,15 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Login_Form extends AppCompatActivity {
+public class Login_Form extends AppCompatActivity{
     private EditText correoElectronico;
     private EditText pass;
     private String URL="https://avproyect.000webhostapp.com/Login.php";
     public SharedPreferences preferences;
     public SharedPreferences.Editor editar;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +50,12 @@ public class Login_Form extends AppCompatActivity {
         setContentView(R.layout.activity_login__form);
         correoElectronico = (EditText) findViewById(R.id.correoElectronico);
         pass = (EditText) findViewById(R.id.passwordLogin);
+
+
+
+
+
+
 
         Context context = this.getApplicationContext();
         preferences=context.getSharedPreferences("logeo",Context.MODE_PRIVATE);
@@ -78,6 +90,9 @@ public class Login_Form extends AppCompatActivity {
 
 
     }
+
+
+
 
     public void crearCuenta(View view) {
 
@@ -150,7 +165,7 @@ public class Login_Form extends AppCompatActivity {
 
                     }
                     else {
-                        Toast.makeText(Login_Form.this, "Datos cargados correctamente\n"+response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login_Form.this, "Acceso Correcto", Toast.LENGTH_LONG).show();
 
                         try {
 
@@ -175,7 +190,7 @@ public class Login_Form extends AppCompatActivity {
                             editar.commit();
 
                             if (tipo_usuario.equals("conductor")){
-                                Intent mostrar = new Intent(Login_Form.this, InicioPasajero.class);
+                                Intent mostrar = new Intent(Login_Form.this, InicioConductor.class);
                                 startActivity(mostrar);
                                 finish();
                             }
@@ -222,5 +237,10 @@ public class Login_Form extends AppCompatActivity {
             RequestQueue rQ = Volley.newRequestQueue(Login_Form.this);
             rQ.add(request);
         }
+    }
+
+    public void veracercade(View view) {
+        Intent mostrar3 = new Intent(Login_Form.this, AcercadeyVideo.class);
+        startActivity(mostrar3);
     }
 }

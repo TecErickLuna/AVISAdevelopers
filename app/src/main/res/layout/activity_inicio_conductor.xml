@@ -8,6 +8,14 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:background="@color/colorWhite">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
     <LinearLayout
         android:clipToPadding="false"
@@ -128,14 +136,14 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
-                    android:src="@drawable/ic_solicitud_24dp"
+                    android:src="@drawable/ic_unidad_24dp"
                     android:padding="10dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Solicitudes"
+                    android:text="Buscar Unidad"
                     android:textColor="#000"/>
                 <View
                     android:layout_width="match_parent"
@@ -146,7 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Mira quien pide tus servicios"
+                    android:text="Busca por Alias Unidades Conocidas"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>
@@ -225,14 +233,14 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:background="@drawable/circlebackgroundred"
-                    android:src="@drawable/ic_configuracion_24dp"
+                    android:src="@drawable/ic_shared_24dp"
                     android:padding="10dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Configuracion"
+                    android:text="Contactanos"
                     android:textColor="#000"/>
                 <View
                     android:layout_width="match_parent"
@@ -243,7 +251,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Ajustes de aplicacion"
+                    android:text="Comparte en Nuestras Redes Sociales"
                     android:padding="5dp"
                     android:textColor="#000"/>
             </LinearLayout>
@@ -298,7 +306,8 @@
 
     </LinearLayout>
 
-
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

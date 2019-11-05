@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/bg_tipocuenta"
+    >
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+
+        >
+
+        <Button
+            android:id="@+id/mostrar_rutaahuacha"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Ahuachapan"
+            android:textColor="@drawable/txt_btn_uno_login"
+            android:padding="8dp"
+            android:background="@drawable/btn_uno_login"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:drawableLeft="@drawable/ic_ruta_24dp"
+            />
+
+        <Button
+            android:id="@+id/mostrar_rutameta"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:padding="8dp"
+            android:textColor="@drawable/txt_btn_uno_login"
+            android:background="@drawable/btn_uno_login"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/ic_ruta_24dp"
+            android:text="Metapan"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
