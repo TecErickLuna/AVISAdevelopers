@@ -126,17 +126,17 @@ public class BuscarUnidades extends AppCompatActivity {
     }
 
     public void ruta(View view) {
-       /* if (rutaMicro.getText().equals("AHUACHAPAN-SANTA ANA")) {*/
+        if (rutaMicro.getText().equals("Ahuachapan-Santa Ana")) {
             Intent rpasajero = new Intent(BuscarUnidades.this, MapaRutaAhuacha.class);
             startActivity(rpasajero);
 
 
-      /*  } else if (rutaMicro.getText().equals("METAPAN-SANTA ANA")) {
+        } else if (rutaMicro.getText().equals("Metapan-Santa Ana")) {
             Intent rpasajero = new Intent(BuscarUnidades.this, MapaRutaMetapan.class);
             startActivity(rpasajero);
 
 
-        }*/
+        }
 
     }
 }
